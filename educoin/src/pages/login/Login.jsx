@@ -1,8 +1,10 @@
 import "./Login.css";
+import {useNavigate} from "react-router-dom";
 import { FaUserGraduate } from "react-icons/fa";
 
 function Login() {
-  return (
+ const navigate = useNavigate();
+    return (
     <div className="login-container">
 
       <div className="login-card">
@@ -27,8 +29,8 @@ function Login() {
           placeholder="Contraseña"
         />
 
-        <button>
-          Iniciar Sesión
+        <button onClick={() => navigate("/dashboard")}>
+                Iniciar Sesión
         </button>
 
       </div>

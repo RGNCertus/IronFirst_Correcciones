@@ -454,25 +454,13 @@ contenedor_2.style.top = "-100%"
 contenedor_2.style.transition = "1.4s"
 Supremo.style.height = "160vh" //Le aumente para que no tape al contenedor del juego
 
-
+//Corrección prueba 11
     function Desaparaceer3(){
     var Seccion_Juego = document.getElementById("Seccion_Juego")
     var contenedor_2 = document.getElementById("Seccion_2")
-    var juego = document.getElementById("Registraar")
-    var Titulo_jugar = document.getElementById("Titulo_jugar")
-    var Contenedor_juego = document.getElementById("Contenedor_Juego")
-    var Cabezara = document.getElementById("Cabezera")
 
         Seccion_Juego.style.left = "0%"
         contenedor_2.style.display = "none"
-        juego.style.top = "0%"
-        juego.style.transition = "0s"
-        Titulo_jugar.style.left = "0%"
-        Titulo_jugar.style.transition = "0.8s"
-        Contenedor_juego.style.left = "0%"
-        Contenedor_juego.style.transition = "1.2s"
-        Cabezara.style.left = "0%"
-        Cabezara.style.transition = "1.2s"
 
     }
 

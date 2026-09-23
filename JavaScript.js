@@ -95,13 +95,13 @@ function JUEGO(){
         Puede_Sumar2 = true
 
         //FUNCION QUE UNICAMENTE AUMENTA PUNTOS Y RESETEA LAS VARIABLES AL LLEGAR A CIERTO LIMITE
-        //Corrección prueba 6 (parte 1)
+        //Corrección prueba 6 (parte 1) + 2da Corrección prueba 6 (sonido)
         function Aumentar_Puntos(evento){
             if(evento.target.id == "Meteiorito" && Puede_Sumar == false){ return }
             if(evento.target.id == "Meteiorito2" && Puede_Sumar2 == false){ return }
 
-            if(evento.target.id == "Meteiorito"){ Puede_Sumar = false }
-            if(evento.target.id == "Meteiorito2"){ Puede_Sumar2 = false }
+            if(evento.target.id == "Meteiorito"){ Puede_Sumar = false; Explulsar() }
+            if(evento.target.id == "Meteiorito2"){ Puede_Sumar2 = false; Explulsar2() }
 
             Puntaje++;
             //Corrección prueba 2
@@ -187,11 +187,7 @@ function JUEGO(){
             setTimeout(Metiorito_Direccion2, 2600)//PRIMERO VA A SER EJECUTADO A LOS DOS PRIMEROS SEGUNDOS
             Reanudar_trayectoria2 = setInterval(Metiorito_Direccion2, 2350)//LUEGO SE VA A LLAMAR A LOS METIORITOS CADA 2,3 SEGUNDOS
 
-
-        //AQUI ADJUNTAMOS LA ACCION DE LA FUNCION EXPULZAR AL PASAR SOBRE EL METIORITO
-        document.getElementById("Meteiorito").addEventListener('mouseover', Explulsar)
-        document.getElementById("Meteiorito2").addEventListener('mouseover', Explulsar2)
-
+        //2da Corrección prueba 6
 
         //ESTA ES LA FUNCION QUE EXPULSA AL METIRITO 1 DE MANERA ALEATORIA FUERA DEL MAPA
         function Explulsar (){
@@ -357,6 +353,7 @@ function JUEGO(){
                         function Metiorito_Direccion(){
                             Distancia1 = 80
                             Altura1 = Math.round(Math.random()* 450)
+                            Puede_Sumar = true
                 
                             document.getElementById("Meteiorito").style.left = Distancia1 + "%"
                             document.getElementById("Meteiorito").style.top = Altura1 + "px"}
@@ -369,6 +366,7 @@ function JUEGO(){
                         function Metiorito_Direccion2(){
                             Distancia2 = 80
                             Altura2 = Math.round(Math.random()* 450)
+                            Puede_Sumar2 = true
                 
                             document.getElementById("Meteiorito2").style.left = Distancia2 + "%"
                             document.getElementById("Meteiorito2").style.top = Altura2 + "px"}

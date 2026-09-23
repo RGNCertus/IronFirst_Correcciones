@@ -138,9 +138,8 @@ function JUEGO(){
                 Desbloquear_Pantalla  =  setInterval(Ganaste_Pantalla, 1)
 
                 Swal.fire({
-                    title : 'FELICIDADES POR SUPERAR <br> EL NIVEL <br><br> <img src="IMG/Check.png" width = "120px"><br>',
-                    html: 'Al parecer nos salvamos, agradecemos tu ayuda y ezfuerzo al superar este nivel, esperamos seguir contando contigo, si algo mas sucede y por cierto, no olvides que te esperan grandes cosas al final del juego asi que no pares de intentar ',
-                    icon: 'sucess',
+                    title : 'FELICIDADES POR SUPERAR <br> EL NIVEL <br><br> <img src="IMG/Check.png" width="120px" style="display:block;margin:0 auto;"><br>',
+                    html: 'Al parecer nos salvamos. Agradecemos tu ayuda y esfuerzo al superar este nivel; esperamos seguir contando contigo. Por cierto, no olvides que te esperan grandes cosas al final del juego, así que no pares de intentar.',
                     confirmButtonText: 'QUIERO CONTINUAR',
                     width: '50%',
                     height: '80%',

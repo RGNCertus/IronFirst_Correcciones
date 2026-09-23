@@ -52,13 +52,14 @@ function Graficos_fondo(){
 Contenedor_RQ = document.getElementById("Contenedor_RC")
 if(Graficos == 1){
 document.getElementById("Recursos").style.marginLeft = "60%"
-document.getElementById("Fondo").style.background = "url(IMG/Fondo_Espacio2.jpg)"
+document.getElementById("Fondo").style.background = "url(IMG/Fondo_Espacio2_alt.jpg)"
 document.getElementById("Fondo").style.backgroundAttachment = "fixed"
 document.getElementById("Fondo").style.backgroundRepeat = "no-repeat"
 document.getElementById("Fondo").style.backgroundSize = "100% 120%"
 Graficos = 2}
 else{
 document.getElementById("Recursos").style.marginLeft = "0%"
+//Corrección prueba 4
 document.getElementById("Fondo").style.backgroundImage = "url(IMG/Fondo_Espacio.gif) "
 Graficos = 1
 }
@@ -94,8 +95,9 @@ function JUEGO(){
         //FUNCION QUE UNICAMENTE AUMENTA PUNTOS Y RESETEA LAS VARIABLES AL LLEGAR A CIERTO LIMITE
         function Aumentar_Puntos(){
             Puntaje++;
-            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;5"
-            if(Puntaje == 5){
+            //Corrección prueba 2
+            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
+            if(Puntaje == 27){
                 Puntaje = 0 
                 Tiempo = 71
 
@@ -317,14 +319,26 @@ function JUEGO(){
                                     document.getElementById("Meteiorito2").style.transition = "2.4s"}}
 
                         Restar_Tiempo = setInterval(Tiempo_Disminur, 1000)
-        
-                        document.getElementById("Meteiorito").style.left = Distancia1 + "%"
-                        document.getElementById("Meteiorito").style.top = Altura1 + "px"
-                        document.getElementById("Meteiorito").style.transition = "2.4s"
 
+                        //Corrección prueba 5
+                        var Ancho_Juego = 900
+                        var Distancia_Total = Ancho_Juego * 0.9
+                        var Duracion_Total = 2.4
+                        var actualLeft1 = document.getElementById("Meteiorito").offsetLeft
+                        var metaLeft1 = Ancho_Juego * (Distancia1 / 100)
+                        var restante1 = Math.max(metaLeft1 - actualLeft1, 0)
+                        var duracion1 = Math.max((restante1 / Distancia_Total) * Duracion_Total, 0.1)
+
+                        document.getElementById("Meteiorito").style.transition = duracion1 + "s"
+                        document.getElementById("Meteiorito").style.left = Distancia1 + "%"
+
+                        var actualLeft2 = document.getElementById("Meteiorito2").offsetLeft
+                        var metaLeft2 = Ancho_Juego * (Distancia2 / 100)
+                        var restante2 = Math.max(metaLeft2 - actualLeft2, 0)
+                        var duracion2 = Math.max((restante2 / Distancia_Total) * Duracion_Total, 0.1)
+
+                        document.getElementById("Meteiorito2").style.transition = duracion2 + "s"
                         document.getElementById("Meteiorito2").style.left = Distancia2 + "%"
-                        document.getElementById("Meteiorito2").style.top = Altura2 + "px"
-                        document.getElementById("Meteiorito2").style.transition = "2.4s"
 
                         
                         function Metiorito_Direccion(){

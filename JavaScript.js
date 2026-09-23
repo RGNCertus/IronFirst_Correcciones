@@ -91,9 +91,18 @@ function JUEGO(){
         document.getElementById("Meteiorito").addEventListener('mouseover', Aumentar_Puntos)
         document.getElementById("Meteiorito2").addEventListener('mouseover', Aumentar_Puntos)
 
+        Puede_Sumar = true
+        Puede_Sumar2 = true
 
         //FUNCION QUE UNICAMENTE AUMENTA PUNTOS Y RESETEA LAS VARIABLES AL LLEGAR A CIERTO LIMITE
-        function Aumentar_Puntos(){
+        //Corrección prueba 6 (parte 1)
+        function Aumentar_Puntos(evento){
+            if(evento.target.id == "Meteiorito" && Puede_Sumar == false){ return }
+            if(evento.target.id == "Meteiorito2" && Puede_Sumar2 == false){ return }
+
+            if(evento.target.id == "Meteiorito"){ Puede_Sumar = false }
+            if(evento.target.id == "Meteiorito2"){ Puede_Sumar2 = false }
+
             Puntaje++;
             //Corrección prueba 2
             document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
@@ -152,9 +161,11 @@ function JUEGO(){
 
 
         //ESTA FUNCION DIRIGE AL PRIMER METIORITO 1 A LA TIERRA 
+        //Corrección prueba 6 (parte 2)
         function Metiorito_Direccion(){
             Distancia1 = 80
             Altura1 = Math.round(Math.random()* 450)
+            Puede_Sumar = true
 
             document.getElementById("Meteiorito").style.left = Distancia1 + "%"
             document.getElementById("Meteiorito").style.top = Altura1 + "px"}
@@ -163,10 +174,12 @@ function JUEGO(){
             Reanudar_trayectoria = setInterval(Metiorito_Direccion, 2430)//LUEGO SE VA A LLAMAR A LOS METIORITOS CADA 2,4 SEGUNDOS
 
 
-        //ESTA FUNCION DIRIGE AL PRIMER METIORITO 2 A LA TIERRA         
+        //ESTA FUNCION DIRIGE AL PRIMER METIORITO 2 A LA TIERRA   
+        //Corrección prueba 6 (parte 3)      
         function Metiorito_Direccion2(){
             Distancia2 = 80
             Altura2 = Math.round(Math.random()* 450)
+            Puede_Sumar2 = true
 
             document.getElementById("Meteiorito2").style.left = Distancia2 + "%"
             document.getElementById("Meteiorito2").style.top = Altura2 + "px"}

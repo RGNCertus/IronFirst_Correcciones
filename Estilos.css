@@ -106,10 +106,6 @@ margin: auto;}
 
 
 
-.Titulo-Jugar{text-align: center; /*TITULO DE LA ULTIMA SECCION*/
-font-family: 'Press Start 2P', cursive; text-align: center;
-font-size: 60px;position: relative; top: 0%; left: -110%; padding-bottom: 2%;}
-   
 
 .Tituloar_Juego_5 {font-family: 'Press Start 2P', cursive; text-align: center; font-size: 60px;}
 
@@ -285,7 +281,7 @@ margin-left: 12%; }
 @media (max-width: 1196px){
     .Imgane_metiorito{width: 47%; top: 16vw;}
     .Boton_preparado{width: 38%;}
-    .Titulo-Jugar {font-size: 50px;}
+
     .Contenedor_Historia{top: 15vw; font-size: 1.3vw;}
     
 }

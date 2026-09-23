@@ -49,7 +49,7 @@ Graficos = 1 //Este es el medidor de graficos
 
 //En esta funcion cambio de fondo al presionar el CHEKBOX, para graurar los graficos dentro del juego
 function Graficos_fondo(){
-Contenedor_RQ = document.getElementById("Contenedor_RC")
+
 if(Graficos == 1){
 document.getElementById("Recursos").style.marginLeft = "60%"
 document.getElementById("Fondo").style.background = "url(IMG/Fondo_Espacio2_alt.jpg)"

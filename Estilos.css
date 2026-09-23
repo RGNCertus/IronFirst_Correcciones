@@ -319,8 +319,8 @@ margin-left: 12%; }
         line-height: 70px;}
 
     #Dificultad {display: flex; 
-    justify-content: center; width: 100%;
-    position: absolute; top: 45%; left: 0px; transition: 2s;}
+    justify-content: center; align-items: center; gap: 1%; width: 100%;
+    position: absolute; top: 45%; left: 0px; transition: 2s; pointer-events: none;}
     
     #Contenedor_contadorlvl2 {height: 100%; 
     display: table; position: absolute;}
@@ -464,8 +464,8 @@ margin-left: 12%; }
     }
     
     #Dificultadlvl3{display: flex;
-    justify-content: center; width: 100%;
-    top: 49%; position: absolute; left: 0%; transition: 5s;}
+    justify-content: center; align-items: center; gap: 1%; width: 100%;
+    top: 49%; position: absolute; left: 0%; transition: 5s; pointer-events: none;}
 
     /*TITULO CENTRAL DE START*/
     .Textolvl3 {

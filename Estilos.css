@@ -183,9 +183,7 @@ position: absolute; top: 20%; overflow: hidden; transition: 2.3s;}
     .GANASTE_PANTALLA h3 {text-align: center; padding-left: 10%; padding-right: 10%; color: rgb(0, 0, 0);
     font-family: 'Press Start 2P', cursive;}
     
-    #Sin_Audio {display: none; font-size: 20px; color: white;}
-
-    #Ganaste_audio {font-size: 20px; color: white;}
+/*Corrección prueba 9*/
 
     /*ESTILOS GENERALES DE LOS METIORITOS*/
     .Meteiorito {cursor: pointer; display: table; 

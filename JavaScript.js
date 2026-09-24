@@ -458,7 +458,7 @@ Supremo.style.height = "160vh" //Le aumente para que no tape al contenedor del j
     var Seccion_Juego = document.getElementById("Seccion_Juego")
     var contenedor_2 = document.getElementById("Seccion_2")
 
-        Seccion_Juego.style.left = "0%"
+        Seccion_Juego.style.display = "flex"
         contenedor_2.style.display = "none"
 
     }

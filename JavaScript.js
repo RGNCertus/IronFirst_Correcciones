@@ -81,6 +81,7 @@ function JUEGO(){
         if(Tiempo == 0){
             Tiempo = 71
             Puntaje = 0
+            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
             document.getElementById("Perdiste_sound").play()
             alert("Lo lamento perdiste")} }
 
@@ -228,7 +229,8 @@ function JUEGO(){
                 document.getElementById("Meteiorito2").style.transition = "0s"
                 
                 Tiempo = 71
-                Puntaje = 0 }
+                Puntaje = 0
+                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27" }
         
             else {
                 document.getElementById("Meteiorito").style.transition = "2.4s"
@@ -314,6 +316,7 @@ function JUEGO(){
                                 if(Tiempo == 0){
                                     Tiempo = 71
                                     Puntaje = 0
+                                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
                                 document.getElementById("Perdiste_sound").play()    
                                 alert("Lo lamento perdiste")
                                 document.getElementById("Meteiorito").style.left = "-70%"

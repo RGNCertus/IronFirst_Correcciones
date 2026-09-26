@@ -78,6 +78,92 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
     color: #ffffff;
 }
 
+/* 1. Contenedor para ordenar y posicionar los textos correctamente */
+.contenedor-titulo {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* 2. Mejoras para "IRON FIST" (manteniendo tu fuente original) */
+.Seccion_01 .Nombre {
+    /* No tocamos la propiedad font-family para que conserve la tuya */
+    /* Añadimos contorno negro múltiple y un brillo rojo sutil para despegarlo del fondo */
+    text-shadow: 
+        3px 3px 0px #000000, 
+        -2px -2px 0px #000000, 
+        2px -2px 0px #000000, 
+        -2px 2px 0px #000000,
+        0px 0px 12px rgba(255, 0, 0, 0.7);
+    letter-spacing: 2px; /* Opcional: le da un respiro elegante a las letras */
+}
+
+/* 3. Mejoras para el texto principal (manteniendo tu fuente original) */
+.Seccion_01 {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh; /* Fuerza a que ocupe al menos toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra perfectamente en el eje vertical */
+    align-items: center;     /* Centra perfectamente en el eje horizontal */
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Asegura que el contenedor de los títulos no tenga márgenes raros que lo desvíen */
+.contenedor-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 25px 0; /* Controla el espacioexacto entre el texto y el botón JUGAR */
+    position: relative;
+    z-index: 10;
+}
+
+/* Asegura que el botón JUGAR también se mantenga en el flujo del centro */
+.Seccion_01 .Boton {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+}
+
+/* Estilo mejorado para el botón JUGAR */
+.Seccion_01 .Boton {
+    font-family: 'Bebas Neue', sans-serif; /* Mantiene la tipografía que te gusta */
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #ff4757, #ff6b81); /* Degradado rojo llamativo */
+    color: #ffffff; /* Texto blanco puro */
+    border: 2px solid #ffffff; /* Borde nítido para resaltar */
+    border-radius: 8px; /* Bordes ligeramente redondeados y modernos */
+    padding: 12px 35px; /* Tamaño cómodo para hacer clic */
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    margin-top: 15px; /* Espacio respecto al título */
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.6), 
+                0 4px 6px rgba(0, 0, 0, 0.4); /* Brillo difuminado + sombra base */
+    transition: all 0.3s ease; /* Transición fluida para los efectos */
+}
+
+/* Efecto al pasar el mouse por encima (Hover) */
+.Seccion_01 .Boton:hover {
+    background: linear-gradient(135deg, #ff6b81, #ff4757);
+    transform: translateY(-3px) scale(1.05); /* Se eleva un poco y crece ligeramente */
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.9), 
+                0 6px 12px rgba(0, 0, 0, 0.6); /* El brillo se vuelve más intenso */
+}
+
+/* Efecto al hacer clic (Active) */
+.Seccion_01 .Boton:active {
+    transform: translateY(1px) scale(0.98); /* Simula que se hunde al presionarlo */
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.7);
+}
 #Fondo {background-image: url(IMG/Fondo_Espacio.gif) ; color: white; background-attachment: fixed; background-repeat: no-repeat;
 background-size: 100% 120%;
  }

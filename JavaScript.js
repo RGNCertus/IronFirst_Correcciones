@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-Tiempo = 71 //VARIBLE DE INICIO TIEMPO
+Tiempo = 60 //VARIBLE DE INICIO TIEMPO
 Puntaje = 0 //VARIABLE DE INICIO PUNTOS
 
 
@@ -101,7 +101,7 @@ function JUEGO(){
         Tiempo--;
         document.getElementById("Tiempo").innerHTML = Tiempo
         if(Tiempo == 0){
-            Tiempo = 71
+            Tiempo = 60
             Puntaje = 0
             document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
             document.getElementById("Perdiste_sound").play()
@@ -131,14 +131,14 @@ function JUEGO(){
             document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
             if(Puntaje == 27){
                 Puntaje = 0 
-                Tiempo = 71
+                Tiempo = 60
 
 
                 document.getElementById("NEXT").addEventListener('click', Habilitar_Siguienten_LVL)
                 function Habilitar_Siguienten_LVL(){
                 document.getElementById("NIVEL_01").style.display = "none"
                 document.getElementById("NIVEL_02").style.display = "block"}
-                document.getElementById("Tiempo").innerHTML = 70
+                document.getElementById("Tiempo").innerHTML = 60
                 document.getElementById("Puntaje").innerHTML = 0+"&nbsp;/&nbsp;"+27
                 document.getElementById("Triunfo").play()
                 document.getElementById("Fondo_Ciberpunk").pause()
@@ -250,7 +250,7 @@ function JUEGO(){
                 document.getElementById("Meteiorito2").style.left = "-70%"
                 document.getElementById("Meteiorito2").style.transition = "0s"
                 
-                Tiempo = 71
+                Tiempo = 60
                 Puntaje = 0
                 document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27" }
         
@@ -336,7 +336,8 @@ function JUEGO(){
                                 Tiempo--;
                                 document.getElementById("Tiempo").innerHTML = Tiempo
                                 if(Tiempo == 0){
-                                    Tiempo = 71
+                                    Tiempo = 60
+                                    
                                     Puntaje = 0
                                 document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
                                 document.getElementById("Perdiste_sound").play()    

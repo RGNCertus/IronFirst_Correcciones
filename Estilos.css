@@ -48,21 +48,27 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
 
 /* Caja de contenido del mensaje */
 .info-content {
-    background-color: #fffdfd;
-    color: #080808;
+    background: rgba(15, 15, 35, 0.92);
+    color: #ffffff;
     padding: 25px 30px;
     border-radius: 12px;
     width: 90%;
     max-width: 400px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     position: relative;
     text-align: center;
-    border: none;
+    border: 2px solid rgba(255, 71, 87, 0.6);
+    box-sizing: border-box;
+    
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.35), inset 0 0 10px rgba(255, 71, 87, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    
+    
 }
 
 .info-content h3 {
     margin-top: 0;
-    color: #0a0a0a;
+    color: #ffffff;
 }
 
 /* Botón de cerrar dentro del modal (la 'X') */
@@ -256,17 +262,19 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
 }
 
 .Reglas_estilos {
-    background: rgba(248, 248, 248, 0.9);
-    color: black;
-    border: 0.19vw solid black;
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    border-radius: 10px;
-    padding: 20px;
+     background: rgba(15, 15, 35, 0.92);
+    color: #ffffff;
+    border: 2px solid rgba(255, 71, 87, 0.6);
+    border-radius: 12px;
+    padding: 25px 30px;
     box-sizing: border-box;
-    font-size: 1.14vw;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.35), inset 0 0 10px rgba(255, 71, 87, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+    flex: 1;
 }
 
 .Reglas_estilos h3 {
@@ -383,6 +391,144 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
     box-shadow: 0 0 25px rgba(255, 71, 87, 0.9);
 }
 
+/* Contenedor general de la sección 2 */
+#Seccion_2 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Título de la segunda sección */
+.Titulo_historia {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.2vw;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Fila principal que une la imagen del meteorito y la tarjeta de texto lado a lado */
+.seccion-historia-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Imagen del meteorito cayendo a la tierra (Lado izquierdo) */
+.Imgane_metiorito {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 12px;
+    border: 0.19vw solid rgba(255, 71, 87, 0.6);
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+    flex: 1.2;
+}
+
+/* Contenedor de la historia (Lado derecho - Estilo idéntico al carrusel) */
+.Contenedor_Historia {
+    background: rgba(15, 15, 35, 0.92);
+    color: #ffffff;
+    border: 2px solid rgba(255, 71, 87, 0.6);
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.35), inset 0 0 10px rgba(255, 71, 87, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+    flex: 1;
+}
+
+/* Título del capítulo dentro de la tarjeta */
+.Contenedor_Historia h3 {
+    color: #ff4757;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Botón de la historia */
+.Boton_preparado {
+    background: #ff4757;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.6);
+    transition: all 0.3s ease;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.Boton_preparado:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.9);
+}
+
+/* Contenedor de los botones inferiores (Narración y Preparado) */
+.BOTONES_2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Contenedor del reproductor de audio */
+.Contenedor_narracion {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.Contenedor_narracion:hover {
+    border-color: #ff4757;
+    color: #ff4757;
+}
+
+#VOLUMEN {
+    font-size: 1.1rem;
+}
+
+#PAUSE {
+    display: none;
+}
+
+
 
 
 
@@ -438,32 +584,7 @@ left: 44%; top: 4%; cursor: pointer;}
 
 /*SEGUNDA SECCION------------------------------------------------------------------------------------------------------*/
 
-#Seccion_2 {position: relative; top: 10%;}/*Este es el contenedor de laseccion 2*/
 
-.Titulo_historia{font-family: 'Press Start 2P', cursive; /*ESTE ES EL TITULO DE LA SEGUNDA SECCION*/
-text-align: left; font-size: 40px; position: absolute; 
-left: -100%;}
-
-.Imgane_metiorito{position: absolute; top: 210px; left: -100%; width:600px}/*ESTA ES LA IMAGEN DEL METIORITO CALLENDO A LA TIERRA*/
-
-.Contenedor_Historia{width: 40%;     /*ESTE ES EL CONENTENEDOR DE LA HISTORIA*/
-background: rgba(255, 255, 255, 0.659);
-color: black; padding-top: 2%; padding-right: 2%;
-padding-left: 2%; padding-bottom: 2%; float: right;
-position: relative; right: 100%; top: 194px;}
-
-.Boton_preparado{width: 70%; height: 6vh; /*ESTE ES EL BOTON DE LA HISTORIA*/
-background: black; display: flex; font-size: 1.2vw;
-justify-content: center; align-items: center;
-cursor: pointer; color: white; font-family: 'Inconsolata', monospace;
- }
-
-.Contenedor_narracion {width: 9vh; height: 9vh; background: black; color: white; border-radius: 0.5rem;
-display: flex; justify-content: center; align-items: center; cursor: pointer; margin-left: 10%;}
-#VOLUMEN{font-size: 90%; }
-#PAUSE {display: none;}
-.BOTONES_2 {display: flex; align-items: center;  margin-top: 5%; height: 9vh; width: 50%; overflow: hidden;
-margin: auto;}
 
 /*TERCERA SECCION------------------------------------------------------------------------------------------------------*/
 

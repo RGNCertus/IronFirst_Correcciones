@@ -1,6 +1,6 @@
 Swal.fire({
     title : '¿Preparado para salvar el mundo? <br><br> <img src="IMG/planeta_tierra.png" width = "120px"><br>',
-    html: 'IRON FIST, es un juego que mejorara tus reflejos a medida que pases de nivel, retandote cada vez mas a medida que avances y desbloqueando grandes logros al final de cada nivel, esperamos te diviertas y disfrutes de este gran juego   ',
+    html: 'IRON FIST es un juego de acción arcade diseñado para poner a prueba tus reflejos. Tu misión es defender la Tierra desviando meteoritos a lo largo de 3 niveles de dificultad creciente. ¡Supera el tiempo límite, desbloquea logros especiales y salva el planeta! Esperamos que disfrutes la experiencia.  ',
     icon: 'sucess',
     confirmButtonText: 'ESTOY PREPARADO',
     width: '50%',

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,21 @@
 <title>Juegos</title>
 </head>
 <body id="Fondo" >
+
+<!-- Botón de información en la esquina superior izquierda -->
+<button id="info-btn" class="info-button" title="Información">
+    <i class="fa-solid fa-circle-info"></i>
+</button>
+
+<!-- Contenedor del mensaje (inicialmente oculto con una clase o display: none) -->
+<div id="info-modal" class="info-modal hidden">
+    <div class="info-content">
+        <span id="close-info" class="close-btn">&times;</span>
+        <h3>IRON FIST</h3>
+        <p>IRON FIST es un juego de acción arcade diseñado para poner a prueba tus reflejos. Tu misión es defender la Tierra desviando meteoritos a lo largo de 3 niveles de dificultad creciente. ¡Supera el tiempo límite, desbloquea logros especiales y salva el planeta! Esperamos que disfrutes la experiencia.</p>
+    </div>
+</div>
+
 
 <!--SECCION - CONTENEDOR GENERAL--------------------------------------------------------------->
 

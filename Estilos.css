@@ -1,5 +1,82 @@
 html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGINA, SI MARGEN EN LOS BORDES*/
 
+/* Botón flotante 'i' en la esquina superior izquierda */
+.info-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #636363ab; /* Color llamativo acorde a Iron Fist */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: serif; /* Le da un toque clásico a la 'i' */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.info-button:hover {
+    background-color: #ff6b81;
+    transform: scale(1.1);
+}
+
+/* Fondo oscuro translúcido o contenedor flotante del mensaje */
+.info-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+}
+
+/* Clase para ocultar elementos fácilmente */
+.info-modal.hidden {
+    display: none;
+}
+
+/* Caja de contenido del mensaje */
+.info-content {
+    background-color: #fffdfd;
+    color: #080808;
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
+    border: none;
+}
+
+.info-content h3 {
+    margin-top: 0;
+    color: #0a0a0a;
+}
+
+/* Botón de cerrar dentro del modal (la 'X') */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
 
 #Fondo {background-image: url(IMG/Fondo_Espacio.gif) ; color: white; background-attachment: fixed; background-repeat: no-repeat;
 background-size: 100% 120%;

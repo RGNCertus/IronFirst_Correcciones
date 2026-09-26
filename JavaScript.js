@@ -1,4 +1,4 @@
-Swal.fire({
+/*Swal.fire({
     title : '¿Preparado para salvar el mundo? <br><br> <img src="IMG/planeta_tierra.png" width = "120px"><br>',
     html: 'IRON FIST es un juego de acción arcade diseñado para poner a prueba tus reflejos. Tu misión es defender la Tierra desviando meteoritos a lo largo de 3 niveles de dificultad creciente. ¡Supera el tiempo límite, desbloquea logros especiales y salva el planeta! Esperamos que disfrutes la experiencia.  ',
     icon: 'sucess',
@@ -9,13 +9,35 @@ Swal.fire({
     
     
     timerProgressbar: true,
-    /*Funcion de cerrar la alerta*/
+    /*Funcion de cerrar la alerta
     allowOutsideClick: true,
     allowEscapeKey: false,
     allowEnterkey: false,
     stopKeydownPropagation: false,
     });
+*/
+document.addEventListener("DOMContentLoaded", () => {
+    const infoBtn = document.getElementById("info-btn");
+    const infoModal = document.getElementById("info-modal");
+    const closeBtn = document.getElementById("close-info");
 
+    // Mostrar el mensaje al hacer clic en el botón 'i'
+    infoBtn.addEventListener("click", () => {
+        infoModal.classList.remove("hidden");
+    });
+
+    // Ocultar el mensaje al hacer clic en la 'X'
+    closeBtn.addEventListener("click", () => {
+        infoModal.classList.add("hidden");
+    });
+
+    // (Opcional) Ocultar el mensaje si hacen clic fuera de la cajita de texto
+    window.addEventListener("click", (event) => {
+        if (event.target === infoModal) {
+            infoModal.classList.add("hidden");
+        }
+    });
+});
 
 
 Tiempo = 71 //VARIBLE DE INICIO TIEMPO

@@ -2,9 +2,10 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
 
 /* Botón flotante 'i' en la esquina superior izquierda */
 .info-button {
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 20px;
+    z-index:20;
     width: 40px;
     height: 40px;
     background-color: #636363ab; /* Color llamativo acorde a Iron Fist */
@@ -75,7 +76,7 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
 }
 
 .close-btn:hover {
-    color: #ffffff;
+     transform: translateY(-3px) scale(2);
 }
 
 /* 1. Contenedor para ordenar y posicionar los textos correctamente */
@@ -134,7 +135,7 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
 
 /* Estilo mejorado para el botón JUGAR */
 .Seccion_01 .Boton {
-    font-family: 'Bebas Neue', sans-serif; /* Mantiene la tipografía que te gusta */
+    font-family:'Press Start 2P', cursive; /* Mantiene la tipografía que te gusta */
     font-size: 1.5rem;
     letter-spacing: 2px;
     background: linear-gradient(135deg, #ff4757, #ff6b81); /* Degradado rojo llamativo */
@@ -164,6 +165,227 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
     transform: translateY(1px) scale(0.98); /* Simula que se hunde al presionarlo */
     box-shadow: 0 0 10px rgba(255, 71, 87, 0.7);
 }
+
+
+/* Contenedor principal de la sección de reglas */
+#Reglas {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Título superior de las reglas */
+.Titulo_Reglas {
+    font-size: 2.2vw;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Fila principal que une la imagen guía y el carrusel lado a lado */
+.reglas-contenido-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Contenedor de la imagen izquierda (más grande y nítida) */
+.reglas-imagen-container {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Img_reglas {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    border-radius: 10px;
+    border: 0.19vw solid rgba(255, 71, 87, 0.6);
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+}
+
+/* Contenedor del carrusel derecho */
+.carrusel-contenedor-dual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+}
+
+.carrusel-slide-wrapper {
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos de las tarjetas del carrusel (adiós al position: absolute que las descolocaba) */
+.regla-slide {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.regla-slide.activa {
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+}
+
+.Reglas_estilos {
+    background: rgba(248, 248, 248, 0.9);
+    color: black;
+    border: 0.19vw solid black;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 1.14vw;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.Reglas_estilos h3 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: #ff4757;
+}
+
+.Reglas_estilos p {
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Botones de navegación (Flechas del carrusel) */
+.carrusel-btn {
+    background: rgba(255, 71, 87, 0.9);
+    color: white;
+    border: 2px solid #ffffff;
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+    flex-shrink: 0;
+}
+
+.carrusel-btn:hover {
+    background: #ff4757;
+    transform: scale(1.1);
+}
+
+#btn-anterior {
+    margin-right: 10px;
+}
+
+#btn-siguiente {
+    margin-left: 10px;
+}
+
+/* Puntos indicadores del carrusel */
+.carrusel-indicadores {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 10px 0;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.punto.activo {
+    background: #ff4757;
+    transform: scale(1.25);
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.8);
+}
+
+/* Botón inferior ¿Estas listo? perfectamente centrado */
+.Listo {
+    width: 100%;
+    max-width: 350px;
+    height: 7vh;
+    background: rgb(100, 21, 146);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1.3vw;
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(100, 21, 146, 0.6);
+    transition: all 0.3s ease;
+}
+
+.Listo:hover {
+    background: rgb(120, 28, 175);
+    transform: scale(1.03);
+}
+
+/* Reutilizamos o igualamos el estilo al botón "JUGAR" principal */
+.Boton {
+    /* Asegúrate de que tenga tus propiedades del botón JUGAR: */
+    font-family: 'Press Start 2P', cursive;
+    background: #ff4757; /* O el color rojo/rosado de tu botón principal */
+    color: white;
+    border: 2px solid #ffffff;
+    padding: 15px 30px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.6);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-size: 1.1vw;
+    text-align: center;
+}
+
+.Boton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.9);
+}
+
+
+
+
 #Fondo {background-image: url(IMG/Fondo_Espacio.gif) ; color: white; background-attachment: fixed; background-repeat: no-repeat;
 background-size: 100% 120%;
  }
@@ -206,34 +428,11 @@ left: 44%; top: 4%; cursor: pointer;}
 
 }
 
-.Boton {width: 20vw; height: 4vw; background: rgb(144, 90, 196); /*Este es el boton de JUGAR*/
-cursor: pointer;font-family: 'Press Start 2P', cursive;
-font-size: 1.2vw; display: flex; align-items: center; justify-content: center; white-space: nowrap;
-color: white; border-radius: 2px; border: none;
-margin-left: auto; margin-right: auto; margin: auto; margin-top: -3%; }
+
 
 /*SECCION REGLAS ------------------------------------------------------------------------------------------------------*/
 
 
-
-#Reglas{position: relative; width: 100%; top: 120%;}
-
-.Titulo_Reglas{font-size: 2.4VW; position: relative; top: -20%; left: 2%; font-family: 'Press Start 2P', cursive;}
-
-.Img_reglas {margin-top: 1%; margin-left: 2%; width: 34%}
-
-.Reglas_estilos {background: rgba(248, 248, 248, 0.521); color: black; border: 0.19vw solid black; 
-width: 40%; height: auto; position: absolute;   left: 58% ; font-size: 1.14vw;}
-
-#R1 {top: -4%;}
-#R2 {top: 38%;}
-#R3_4 {top: 75%;}
-.Reglas_estilos h3  {margin-left: 3%; margin-right: 3%; text-align: center;} 
-.Reglas_estilos p  {margin-left: 3%; margin-right: 3%; text-align: center;} 
-
-.Listo {width: 34%; height: 8vh; background: rgb(100, 21, 146); display: flex; 
-align-items: center; justify-content: center; cursor: pointer; position: relative; left: 2%; top: 2vw; font-size: 1.5vw;
-font-family: 'Inconsolata', monospace;}
 
 
 

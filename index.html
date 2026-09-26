@@ -15,19 +15,7 @@
 </head>
 <body id="Fondo" >
 
-<!-- Botón de información en la esquina superior izquierda -->
-<button id="info-btn" class="info-button" title="Información">
-    <i class="fa-solid fa-circle-info"></i>
-</button>
 
-<!-- Contenedor del mensaje (inicialmente oculto con una clase o display: none) -->
-<div id="info-modal" class="info-modal hidden">
-    <div class="info-content">
-        <span id="close-info" class="close-btn">&times;</span>
-        <h3>IRON FIST</h3>
-        <p>IRON FIST es un juego de acción arcade diseñado para poner a prueba tus reflejos. Tu misión es defender la Tierra desviando meteoritos a lo largo de 3 niveles de dificultad creciente. ¡Supera el tiempo límite, desbloquea logros especiales y salva el planeta! Esperamos que disfrutes la experiencia.</p>
-    </div>
-</div>
 
 
 <!--SECCION - CONTENEDOR GENERAL--------------------------------------------------------------->
@@ -41,7 +29,20 @@
 
 <section class="Seccion_01" id="Seccion_01">
     
-    
+    <!-- Botón de información en la esquina superior izquierda -->
+<button id="info-btn" class="info-button" title="Información">
+    <i class="fa-solid fa-circle-info"></i>
+</button>
+
+<!-- Contenedor del mensaje (inicialmente oculto con una clase o display: none) -->
+<div id="info-modal" class="info-modal hidden">
+    <div class="info-content">
+        <span id="close-info" class="close-btn">&times;</span>
+        <h3>IRON FIST</h3>
+        <p>IRON FIST es un juego de acción arcade diseñado para poner a prueba tus reflejos. Tu misión es defender la Tierra desviando meteoritos a lo largo de 3 niveles de dificultad creciente. ¡Supera el tiempo límite, desbloquea logros especiales y salva el planeta! Esperamos que disfrutes la experiencia.</p>
+    </div>
+</div>
+
     <!-- Contenedor para agrupar los textos y aplicarles efectos juntos -->
     <div class="contenedor-titulo">
         <h1 class="Nombre">IRON FIST</h1>
@@ -50,38 +51,77 @@
 
     <button class="Boton" id="Juego" onclick="Mover()">JUGAR</button>
 </section>
-<!--SECCION - 3 ------------------------------------------------------------------------------------------------------->
 
-<section  id="Reglas">
-    <h1 class="Titulo_Reglas">Antes de empezar lee,<br><br> las reglas.</h1>
-    <img src="IMG/reglas.jpg"  class="Img_reglas">
-    <div class="Reglas_estilos" id="R1">
-<!--Corrección prueba 3 - de repente le cambio los estilos a las reglas-->
-        <h3>REGLA #1</h3>
-        <p>Lo que señala el recuadro 1 en la imagen del lado izquierdo es el puntaje. Este se incrementará conforme vayas desviando los meteoritos de la tierra. Para hacer esto debes pasar el cursor del mouse sobre el meteorito que se acerca. Si los puntos obtenidos llegan al puntaje que indica el marcador del nivel actual, superarás dicho nivel.
-        </p>
+<!--SECCION - REGLAS (CON IMAGEN GUÍA Y CARRUSEL) --------------------------------------------------------------------->
+
+<section id="Reglas" class="seccion-reglas-dual">
+    <h1 class="Titulo_Reglas">ANTES DE EMPEZAR LEE<br>LAS REGLAS</h1>
+    
+    <div class="reglas-contenido-principal">
+        
+        <!-- Lado Izquierdo: Imagen de guía con los números -->
+        <div class="reglas-imagen-container">
+            <img src="IMG/JUEGO.jpg" class="Img_reglas" alt="Guía del juego">
+        </div>
+
+        <!-- Lado Derecho: Carrusel interactivo -->
+        <div class="carrusel-contenedor-dual">
+            <!-- Botón Anterior -->
+            <button class="carrusel-btn" id="btn-anterior" onclick="cambiarSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Contenedor de las Reglas -->
+            <div class="carrusel-slide-wrapper">
+                
+                <!-- Regla 1 -->
+                <div class="regla-slide activa">
+                    <div class="Reglas_estilos">
+                        <h3>REGLA #1</h3>
+                        <p>Lo que se encuentra señalado son los puntos, que según tu progreso, se irán incrementando al desviar meteoritos de la tierra (Esto al pasar el cursor sobre el meteorito que se acerca), si los puntos obtenidos llegan a 30, es una victoria automática, pero recuerda que los meteoritos son impredecibles en su ataque así que tienes que estar atento a su llegada.</p>
+                    </div>
+                </div>
+
+                <!-- Regla 2 -->
+                <div class="regla-slide">
+                    <div class="Reglas_estilos">
+                        <h3>REGLA #2</h3>
+                        <p>El tiempo que se señala es el límite máximo que puede aguantar la defensa, siendo unos 60 segundos, en los que el jugador debe cumplir el límite de puntos o será un GAME OVER automático, así que recuerda ser rápido recolectando puntos.</p>
+                    </div>
+                </div>
+
+                <!-- Regla 3 -->
+                <div class="regla-slide">
+                    <div class="Reglas_estilos">
+                        <h3>REGLA #3 y 4</h3>
+                        <p>Estos son los meteoritos que debes evitar que ingresen a la tierra, por lo general suelen ser rápidos así que recuerda: no te descuides o confíes porque en el momento que lo hagas, estos llegarán a la tierra, es por ello que una raya señala el límite por el cual ya es inevitable nuestra salvación (GAME OVER).</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botón Siguiente -->
+            <button class="carrusel-btn" id="btn-siguiente" onclick="cambiarSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
     </div>
 
-
-    <div class="Reglas_estilos" id="R2">
-        <h3>REGLA : 2</h3>
-        <p>El tiempo que se señala es el límite máximo que puede aguantar la defensa, siendo unos 60 segundos, en los que
-            el jugador debe cumplir el límite de puntos o sera un GAMER OVER automático, asi que recuerda ser rápido recolectando
-            puntos.
-        </p>
+    <!-- Indicadores de puntos (Dots) y Botón Final -->
+    <div class="carrusel-indicadores">
+        <span class="punto activo" onclick="irASlide(0)"></span>
+        <span class="punto" onclick="irASlide(1)"></span>
+        <span class="punto" onclick="irASlide(2)"></span>
     </div>
 
-<!--Segunda corrección prueba 7-->
-    <div class="Reglas_estilos" id="R3_4">
-        <h3>REGLA #3</h3>
-        <p>Lo que señala el recuadro 3 son los meteoritos. Debes evitar que estos se alcancen una distancia muy cercana la tierra. Hay una línea blanca (señalada por una flecha verde en la imagen de guía) la cual indica el límite de cuanto puede acercarse un meteorito. Si este pasa la línea blanca, pierdes.
-        </p>
-    </div>
-
-<div class="Listo" onclick="Mover_2()">¿Estas listo?</div>
-
-
+    <button class="Boton" id="Listo" onclick="Mover_2()">¡ESTOY LISTO!</button>
 </section>
+
+
+
+
+
 
 
 

@@ -39,6 +39,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// --- LÓGICA DEL CARRUSEL DE REGLAS ---
+let indiceActual = 0;
+const slides = document.querySelectorAll(".regla-slide");
+const puntos = document.querySelectorAll(".punto");
+
+function mostrarSlide(indice) {
+    // Control de límites circular
+    if (indice >= slides.length) {
+        indiceActual = 0;
+    } else if (indice < 0) {
+        indiceActual = slides.length - 1;
+    } else {
+        indiceActual = indice;
+    }
+
+    // Ocultar todas y remover clases activas
+    slides.forEach(slide => slide.classList.remove("activa"));
+    puntos.forEach(punto => punto.classList.remove("activo"));
+
+    // Mostrar la slide actual y activar su punto correspondiente
+    slides[indiceActual].classList.add("activa");
+    puntos[indiceActual].classList.add("activo");
+}
+
+function cambiarSlide(direccion) {
+    mostrarSlide(indiceActual + direccion);
+}
+
+function irASlide(indice) {
+    mostrarSlide(indice);
+}
+
+
+
+
 
 Tiempo = 60 //VARIBLE DE INICIO TIEMPO
 Puntaje = 0 //VARIABLE DE INICIO PUNTOS
@@ -337,7 +372,7 @@ function JUEGO(){
                                 document.getElementById("Tiempo").innerHTML = Tiempo
                                 if(Tiempo == 0){
                                     Tiempo = 60
-                                    
+
                                     Puntaje = 0
                                 document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
                                 document.getElementById("Perdiste_sound").play()    

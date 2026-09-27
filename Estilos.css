@@ -529,6 +529,113 @@ html body{margin: 0; padding: 0; font-family: sans-serif;}/*RESTABLESCO LA PAGIN
 }
 
 
+.btn-info-nivel {
+    position: absolute;
+    left: 15px; /* Lo saca un poquito hacia la izquierda del borde de la cabecera para que luzca bien */
+    top: 50%;
+    transform: translateY(-50%); /* Lo centra perfectamente de forma vertical en la barra */
+    width: 38px;
+    height: 38px;
+    background: rgba(15, 15, 35, 0.95);
+    color: #ff4757;
+    border: 2px solid rgba(255, 71, 87, 0.8);
+    border-radius: 50%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-info-nivel:hover {
+    background: #ff4757;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 18px rgba(255, 71, 87, 0.8);
+}
+/* Capa de fondo oscura (Overlay) para el modal */
+.modal-info-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999; /* Muy superior a 1000 */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+/* Cuando se activa con JavaScript */
+.modal-info-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+/* Contenido de la ventana modal */
+.modal-info-contenido {
+    background: rgba(15, 15, 35, 0.98);
+    border: 2px solid #ff4757;
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 0 40px rgba(255, 71, 87, 0.7), inset 0 0 15px rgba(255, 71, 87, 0.3);
+    color: #ffffff;
+    position: relative;
+    text-align: left;
+    font-family: 'Inconsolata', monospace;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    z-index: 100000; /* Asegura que el texto y el cuadro estén sobre el overlay */
+}
+
+.modal-info-overlay.activo .modal-info-contenido {
+    transform: scale(1);
+}
+.modal-info-contenido h3 {
+    color: #ff4757;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.modal-info-contenido p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+
+/* Botón de cerrar (X) dentro del modal */
+.modal-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #ff4757;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-cerrar:hover {
+    color: #ffffff;
+}
+
+
+
+
+
 
 
 
@@ -614,14 +721,26 @@ position: absolute; top: 20%; overflow: hidden; transition: 2.3s;}
     border: 5px dashed purple; 
     background: rgba(255, 255, 255, 0.363); 
     border-bottom: none; display: flex; 
-    align-items: center; position: relative; }
+    align-items: center; position: relative;
+    padding-left: 55px !important; 
+    box-sizing: border-box;
+}
     
     /*Pantalla start del inicio del juego*/
-    .Start {width: 100%; height: 100%; background: rgba(0, 0, 0, 0.582);
-    position: absolute; top: 0%; z-index: 100000000000; 
-    display: flex; align-items: center; 
-    justify-content: center; flex-direction: column; 
-    color: white; text-align: center;}
+    .Start {
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.582);
+    position: absolute; 
+    top: 0%; 
+    z-index: 1000; /* Reducido para no acaparar todo */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    color: white; 
+    text-align: center;
+}
     
     /*Boton de la pantalla start*/
     .Play {background: purple; color: white;
@@ -723,9 +842,7 @@ position: absolute; top: 20%; overflow: hidden; transition: 2.3s;}
 margin-left: 12%; }
 
 .Contenedor_LVL{display: flex; justify-content: center; align-items: center; width: 100%; position: relative; top: 10%;}
-.Nada {width: 45vw; height: auto; background: rgba(191, 44, 228, 0.274); border: 2px solid purple; color: white; position: relative; left: 6%;  }
-.Nada h2 {padding-left: 3%; padding-right: 3%; font-size: 1.2vw;}
-.Nada p {padding-left: 3%; padding-right: 3%;}
+
 
 /*RELOJ*/
 .Fecha {display: flex; width: 280px; margin-bottom: 3%;
@@ -755,7 +872,7 @@ margin-left: 12%; }
     .Contenedor_Reloj { left: 5%; 
     }
 /*BLOQUEO DE NIVELES*/
-#NIVEL_01 {display: block;}
+
 #NIVEL_02 {display: none;}
 #NIVEL3 {display: none;}
 

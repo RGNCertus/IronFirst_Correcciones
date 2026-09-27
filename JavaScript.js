@@ -16,6 +16,13 @@
     stopKeydownPropagation: false,
     });
 */
+// --- LÓGICA DEL MODAL DE INFORMACIÓN DEL NIVEL ---
+function alternarModalInfo() {
+    const modal = document.getElementById("modalInfoNivel");
+    modal.classList.toggle("activo");
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const infoBtn = document.getElementById("info-btn");
     const infoModal = document.getElementById("info-modal");
@@ -164,7 +171,7 @@ function JUEGO(){
             Puntaje++;
             //Corrección prueba 2
             document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
-            if(Puntaje == 27){
+            if(Puntaje == 30){
                 Puntaje = 0 
                 Tiempo = 60
 
@@ -174,7 +181,7 @@ function JUEGO(){
                 document.getElementById("NIVEL_01").style.display = "none"
                 document.getElementById("NIVEL_02").style.display = "block"}
                 document.getElementById("Tiempo").innerHTML = 60
-                document.getElementById("Puntaje").innerHTML = 0+"&nbsp;/&nbsp;"+27
+                document.getElementById("Puntaje").innerHTML = 0+"&nbsp;/&nbsp;"+30
                 document.getElementById("Triunfo").play()
                 document.getElementById("Fondo_Ciberpunk").pause()
                 document.getElementById("Puntos_sound").pause()

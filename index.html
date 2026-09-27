@@ -140,7 +140,7 @@
             En cierto día, las noticias de todo el mundo anunciaron que muy pronto se acercarían meteoritos de gran tamaño a la tierra y que solo era cuestión de horas para que comenzaran a llegar; el resultado de esto fue inmediato ya que miles de personas comenzaron a alertarse y a hacer disturbios, en centros comerciales y areas publicas, para que el gobierno les diera alguna respuesta; pero el gobierno ya tenía un plan de contingencia, ya que ellos se habían enterado de la llegada de estos con días de antelación preparando con la ayuda del resto de gobiernos, la iniciativa "IRON FIST", que consistia en los proyectiles más letales de la tierra y nuestra única salvación
             
             <div class="BOTONES_2">
-                <div class="Boton_preparado" onclick="Mover_3()">¿Estas preparado?</div>
+                <div class="Boton_preparado" onclick="Mover_3()">¡COMENZAR MISIÓN!</div>
                 <div class="Contenedor_narracion" id="Contenedor_narracion" onclick="controlarAudio()">
     <!-- Ícono de volumen activo (altavoz con ondas) -->
     <i class="fas fa-volume-high" id="VOLUMEN"></i>
@@ -161,17 +161,37 @@
             <h1 class="Tituloar_Juego_5" >¡ES HORA DE JUGAR!</h1>
 
             <!--CABEZERA DEL JUEGO------------------------------------------------------->
-        <div id="NIVEL_01">
+        <div id="NIVEL_01">    
+
             <!--Contenedor-Cabezera-->
-            <div class="Cabezera Contenedor">
-            <div class="Tiempo"><h3>TIEMPO</h3><span id="Tiempo">60</span></div><!--Tiempo con su span para la el final del minuto--> 
-            <div class="Puntaje"><h3>PUNTAJE</h3><span id="Puntaje">0&nbsp;/&nbsp;27</span></div><!--Puntaje con su span que indica el puntaje-->
-            <div class="Pause" id="Pause"><h3>PAUSE / REANUDA</h3></div><!--Boton de pause-->
+
+
+            <div class="Cabezera Contenedor" style="position: relative;"> <!-- Añadimos position: relative aquí -->
         
+        <!-- BOTÓN DE INFORMACIÓN / AYUDA (Dentro de la cabecera a la izquierda) -->
+        <button class="btn-info-nivel" id="btn-info-modal" onclick="alternarModalInfo()">
+            <i class="fas fa-question"></i>
+        </button>
+
+        <div class="Tiempo"><h3>TIEMPO</h3><span id="Tiempo">60</span></div>
+        <div class="Puntaje"><h3>PUNTAJE</h3><span id="Puntaje">0&nbsp;/&nbsp;30</span></div>
+        <div class="Pause" id="Pause"><h3>PAUSE / REANUDA</h3></div>
+    </div>
+
+    <!-- MODAL FLOTANTE DE INFORMACIÓN (Fuera de la cabecera, pero dentro del nivel) -->
+    <div class="modal-info-overlay" id="modalInfoNivel">
+        <div class="modal-info-contenido">
+            <button class="modal-cerrar" onclick="alternarModalInfo()">&times;</button>
+            <h3>INFORMACIÓN DEL NIVEL</h3>
+            <p><strong>Una vez completes este nivel, se habilitará la opción "SIGUIENTE".</strong></p>
+            <p>Recuerda que los niveles son progresivos y mejorarán tu nivel de reacción ante estímulos y mucho más importante, te dará una gran sorpresa al final, así que recuerda no perdértela y no parar de intentar.</p>
+        </div>
+    </div>
             </div>
     
             <!--CCMIENZO DEL JUEGO------------------------------------------------------>
     
+
             <!--Contenedor general del juego-->
             <div class="Contenedor"> 
             <!--EFECTOS DE SONIDO-->
@@ -239,7 +259,7 @@
         <!--Contenedor-Cabezera-->
         <div class="Cabezeralvl2 Contenedorlvl2">
             <div class="Tiempolvl2"><h3>TIEMPO</h3><span id="Tiempolvl2">60</span></div><!--Tiempo con su span para la el final del minuto--> 
-            <div class="Puntajelvl2"><h3>PUNTAJE</h3><span id="Puntajelvl2">0 / 34</span></div><!--Puntaje con su span que indica el puntaje-->
+            <div class="Puntajelvl2"><h3>PUNTAJE</h3><span id="Puntajelvl2">0 / 30</span></div><!--Puntaje con su span que indica el puntaje-->
             <div class="Pauselvl2" id="Pauselvl2"><h3>PAUSE / REANUDA</h3></div><!--Boton de pause-->
         
             </div>
@@ -304,7 +324,7 @@
                     <!--Puntaje con su span que indica el puntaje-->
                     <div class="Puntajelvl3">
                         <h3>PUNTAJE</h3>
-                        <span id="Puntajelvl3">0 / 40</span>
+                        <span id="Puntajelvl3">0 / 30</span>
                     </div>
                     <!--Boton de pause-->
                     <div class="Pauselvl3" id="Pauselvl3">
@@ -407,10 +427,8 @@
         </div>
         </div>
            
-<div class="Nada" id="Nada"><h2>Una vez completes este nivel, se habilitará la opcion "SIGUIENTE".</h2><p>Recuerda que los niveles son progresivos
-    y mejorarán tu nivel de reacción ante estímulos y mucho más importante, te dará una gran sorpresa al final, así que recuerda
-    no perdértela y no parar de intentar 
-</p></div>
+    
+
 <div class="NEXT" id="NEXT"><h2>SIGUIENTE NIVEL&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i></h2></div>
 </div>
 

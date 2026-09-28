@@ -28,7 +28,10 @@
 <!--SECCION - 1 ------------------------------------------------------------------------------------------------------->
 
 <section class="Seccion_01" id="Seccion_01">
-    
+
+    <!-- Boton de cambio de graficos/fondo (RESTAURADO: se habia perdido en el ultimo merge) -->
+    <div class="Contenedor_RC" id="Contenedor_RC" onclick="Graficos_fondo()"><div class="Recursos" id="Recursos"></div></div>
+
     <!-- Botón de información en la esquina superior izquierda -->
 <button id="info-btn" class="info-button" title="Información">
     <i class="fa-solid fa-circle-info"></i>
@@ -61,7 +64,8 @@
         
         <!-- Lado Izquierdo: Imagen de guía con los números -->
         <div class="reglas-imagen-container">
-            <img src="IMG/JUEGO.jpg" class="Img_reglas" alt="Guía del juego">
+            <!-- Corrección prueba 7: imagen actualizada que sí corresponde a la interfaz actual, con los recuadros de guía -->
+            <img src="IMG/reglas.jpg" class="Img_reglas" alt="Guía del juego">
         </div>
 
         <!-- Lado Derecho: Carrusel interactivo -->
@@ -75,10 +79,11 @@
             <div class="carrusel-slide-wrapper">
                 
                 <!-- Regla 1 -->
+                <!-- Corrección prueba 3: texto ligado al marcador real del nivel, en vez del número fijo "30" -->
                 <div class="regla-slide activa">
                     <div class="Reglas_estilos">
                         <h3>REGLA #1</h3>
-                        <p>Lo que se encuentra señalado son los puntos, que según tu progreso, se irán incrementando al desviar meteoritos de la tierra (Esto al pasar el cursor sobre el meteorito que se acerca), si los puntos obtenidos llegan a 30, es una victoria automática, pero recuerda que los meteoritos son impredecibles en su ataque así que tienes que estar atento a su llegada.</p>
+                        <p>Lo que señala el recuadro 1 en la imagen del lado izquierdo es el puntaje. Este se incrementará conforme vayas desviando los meteoritos de la tierra. Para hacer esto debes pasar el cursor del mouse sobre el meteorito que se acerca. Si los puntos obtenidos llegan al puntaje que indica el marcador del nivel actual, superarás dicho nivel.</p>
                     </div>
                 </div>
 
@@ -90,11 +95,12 @@
                     </div>
                 </div>
 
-                <!-- Regla 3 -->
+                <!-- Regla 3 (antes "3 y 4") -->
+                <!-- Corrección prueba 7: texto ligado a los recuadros/flecha de la nueva imagen de guía -->
                 <div class="regla-slide">
                     <div class="Reglas_estilos">
-                        <h3>REGLA #3 y 4</h3>
-                        <p>Estos son los meteoritos que debes evitar que ingresen a la tierra, por lo general suelen ser rápidos así que recuerda: no te descuides o confíes porque en el momento que lo hagas, estos llegarán a la tierra, es por ello que una raya señala el límite por el cual ya es inevitable nuestra salvación (GAME OVER).</p>
+                        <h3>REGLA #3</h3>
+                        <p>Lo que señala el recuadro 3 son los meteoritos. Debes evitar que estos se alcancen una distancia muy cercana la tierra. Hay una línea blanca (señalada por una flecha verde en la imagen de guía) la cual indica el límite de cuanto puede acercarse un meteorito. Si este pasa la línea blanca, pierdes.</p>
                     </div>
                 </div>
 
@@ -141,7 +147,9 @@
             
             <div class="BOTONES_2">
                 <div class="Boton_preparado" onclick="Mover_3()">¡COMENZAR MISIÓN!</div>
-                <div class="Contenedor_narracion" id="Contenedor_narracion" onclick="controlarAudio()">
+                <!-- Corrección: se quita onclick="controlarAudio()" porque esa función no existe en el JS.
+                     El JS ya controla este botón con addEventListener('click', Iniciar_narracion) -->
+                <div class="Contenedor_narracion" id="Contenedor_narracion">
     <!-- Ícono de volumen activo (altavoz con ondas) -->
     <i class="fas fa-volume-high" id="VOLUMEN"></i>
     <!-- Ícono de silencio o pausa (altavoz tachado o estático) -->

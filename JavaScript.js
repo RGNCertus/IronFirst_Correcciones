@@ -145,7 +145,7 @@ function JUEGO(){
         if(Tiempo == 0){
             Tiempo = 60
             Puntaje = 0
-            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
+            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30"
             document.getElementById("Perdiste_sound").play()
             alert("Lo lamento perdiste")} }
 
@@ -170,7 +170,7 @@ function JUEGO(){
 
             Puntaje++;
             //Corrección prueba 2
-            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
+            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30"
             if(Puntaje == 30){
                 Puntaje = 0 
                 Tiempo = 60
@@ -183,7 +183,7 @@ function JUEGO(){
                 document.getElementById("Tiempo").innerHTML = 60
                 document.getElementById("Puntaje").innerHTML = 0+"&nbsp;/&nbsp;"+30
                 document.getElementById("Triunfo").play()
-                document.getElementById("Fondo_Ciberpunk").pause()
+                document.getElementById("Musica_Nivel1").pause()
                 document.getElementById("Puntos_sound").pause()
                 document.getElementById("Punto2").pause()
                 document.getElementById("GANASTE_PANTALLA").style.display = "flex"
@@ -294,7 +294,7 @@ function JUEGO(){
                 
                 Tiempo = 60
                 Puntaje = 0
-                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27" }
+                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30" }
         
             else {
                 document.getElementById("Meteiorito").style.transition = "2.4s"
@@ -312,7 +312,7 @@ function JUEGO(){
             
             //ESTA FUNCION EJECUTA UN CONJUNTO DE ACCIONES AL PRESIONAR JUGAR
             function PLAY(){
-                document.getElementById("Fondo_Ciberpunk").play()
+                document.getElementById("Musica_Nivel1").play()
                 //MUEVE EL TITULO FUERA DEL CONTENEDOR UNA VEZ DE CLICK A JUGAR
                 document.getElementById("Texo").style.left = "-900px" 
                 //MUEVE AL BOTON PLAY TRANS PRESIONAR PRESIONAR AL MISMO BOTON
@@ -353,7 +353,7 @@ function JUEGO(){
                         //SI LLEGA A UNA EJECUTA LA FUNCION PAUSE
                         if (Activo == 1){
                         
-                        document.getElementById("Fondo_Ciberpunk").pause()
+                        document.getElementById("Musica_Nivel1").pause()
                         document.getElementById("Pausa_Pantalla").style.display = "table"
                         clearInterval(Restar_Tiempo)//BORRAMOS LA FUNCION DE TIEMPO
                         document.getElementById("Tiempo").innerHTML = Tiempo
@@ -373,7 +373,7 @@ function JUEGO(){
                         else { //LA FUNCION DE REANUDAR
                             clearInterval(Pusae_offf) //BORRAMOS LA FUNCION, PARA QUE EL REANUDAR PUEDA EJECUTARSE DE NUEVO
                             document.getElementById("Pausa_Pantalla").style.display = "none"
-                            document.getElementById("Fondo_Ciberpunk").play()
+                            document.getElementById("Musica_Nivel1").play()
                             function Tiempo_Disminur(){//VOLVEMOS A CREAR LA FUNCION DE TIEMPO PARA QUE REANUEDE EL CONTEO
                                 Tiempo--;
                                 document.getElementById("Tiempo").innerHTML = Tiempo
@@ -381,7 +381,7 @@ function JUEGO(){
                                     Tiempo = 60
 
                                     Puntaje = 0
-                                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;27"
+                                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30"
                                 document.getElementById("Perdiste_sound").play()    
                                 alert("Lo lamento perdiste")
                                 document.getElementById("Meteiorito").style.left = "-70%"

@@ -85,6 +85,15 @@ function irASlide(indice) {
 Tiempo = 60 //VARIBLE DE INICIO TIEMPO
 Puntaje = 0 //VARIABLE DE INICIO PUNTOS
 
+//Musica de portada y reglas
+document.getElementById("Musica_Intro").play()
+
+//Volumen predeterminado de los soundtracks de cada nivel (0.0 = silencio, 1.0 = volumen original)
+document.getElementById("Musica_Nivel1").volume = 0.5
+document.getElementById("Musica_Nivel2").volume = 0.5
+document.getElementById("Musica_Nivel3").volume = 0.5
+document.getElementById("Musica_Rules").volume = 0.5
+
 
 
 //FUNCION DE NARRACIONES
@@ -493,6 +502,10 @@ function Mover_2(){
     var imagen = document.getElementById("Imagen")
     var mensaje = document.getElementById("Mensaje")
     var titulo = document.getElementById("Titulo_historia")
+
+    //Cambio de musica: de portada/reglas a la de historia
+    document.getElementById("Musica_Intro").pause()
+    document.getElementById("Musica_Rules").play()
  
     Reglas_Sacar.style.display = "none"
     contenedor_2.style.top = "0%"
@@ -517,6 +530,7 @@ var contenedor_2 = document.getElementById("Seccion_2")
 var Supremo = document.getElementById("Seccion_suprema")
 
 document.getElementById("narracion").pause()
+document.getElementById("Musica_Rules").pause()
 contenedor_2.style.top = "-100%"
 contenedor_2.style.transition = "1.4s"
 Supremo.style.height = "160vh" //Le aumente para que no tape al contenedor del juego

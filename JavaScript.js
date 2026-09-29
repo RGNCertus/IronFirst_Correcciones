@@ -86,7 +86,14 @@ Tiempo = 60 //VARIBLE DE INICIO TIEMPO
 Puntaje = 0 //VARIABLE DE INICIO PUNTOS
 
 //Musica de portada y reglas
-document.getElementById("Musica_Intro").play()
+//El navegador Chrome bloquea los audios automaticos al inicio, lo pondré temporalmente para que inicie con un clic
+document.addEventListener('click', () => {
+    const musicaIntro = document.getElementById("Musica_Intro");
+
+    if (musicaIntro.paused) {
+        musicaIntro.play().catch(error => console.log("Error al reproducir:", error));
+    }
+}, { once: true });
 
 //Volumen predeterminado de los soundtracks de cada nivel (0.0 = silencio, 1.0 = volumen original)
 document.getElementById("Musica_Nivel1").volume = 0.5

@@ -49,7 +49,7 @@ function JUEGOlvl3() {
 
             Contactos()
 
-            document.getElementById("Fondo_Ciberpunk").pause()
+            document.getElementById("Musica_Nivel3").pause()
             document.getElementById("Triunfo").play()
 
             function Ganaste_Pantallalvl3(){
@@ -234,7 +234,7 @@ Conteolvl3 = 4
 
 function PLAYlvl3() {
 
-    document.getElementById("Fondo_Ciberpunk").play()
+    document.getElementById("Musica_Nivel3").play()
     document.getElementById("Textolvl3").style.left = "-900px"
     document.getElementById("Playlvl3").style.left = "-900px"
     document.getElementById("Dificultadlvl3").style.left = "-900px"
@@ -287,7 +287,7 @@ function DETENER_JUEGOlvl3() {
 
             document.getElementById("Tiempolvl3").innerHTML = Tiempolvl3
 
-            document.getElementById("Fondo_Ciberpunk").pause()
+            document.getElementById("Musica_Nivel3").pause()
 
             function Meteorito_detenerlvl3() {
 
@@ -315,7 +315,7 @@ function DETENER_JUEGOlvl3() {
 
             document.getElementById("Pausa_Pantallalvl3").style.display = "none"
 
-            document.getElementById("Fondo_Ciberpunk").play()
+            document.getElementById("Musica_Nivel3").play()
 
             clearInterval(Pause_offlvl3)
 

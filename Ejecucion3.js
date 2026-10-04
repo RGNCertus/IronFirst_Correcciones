@@ -62,7 +62,11 @@ function JUEGOlvl3() {
             clearInterval(Intervalo_Dir4lvl3)
             clearInterval(Restar_Tiempolvl3)
 
-            document.getElementById("Musica_Final").play()
+            document.getElementById("Musica_FinalBoss").play()
+
+            document.getElementById("Pantalla_Ovnislvl3").classList.add("naves-malvadas")
+            document.getElementById("Pantalla_Nodrizalvl3").classList.add("naves-malvadas")
+            document.getElementById("Pantalla_Ovnis2lvl3").classList.add("naves-malvadas")
 
             document.getElementById("Pantalla_Ovnislvl3").style.left = "7%"
             document.getElementById("Pantalla_Ovnislvl3").style.transition = "6s"
@@ -71,33 +75,19 @@ function JUEGOlvl3() {
             document.getElementById("Pantalla_Ovnis2lvl3").style.left = "7%"
             document.getElementById("Pantalla_Ovnis2lvl3").style.transition = "6s"
 
-            function Creditoslvl3() {
-                document.getElementById("Pantalla_creditoslvl3").style.background = "black"
-                document.getElementById("Creditoslvl3").style.top = "-15%"
-                document.getElementById("Creditoslvl3").style.transition = "10s"
-                document.getElementById("Proximolvl3").style.bottom = "-34%"
-                document.getElementById("Proximolvl3").style.transition = "15s"
-            }
-
-            setTimeout(Creditoslvl3, 5000)
-
             setTimeout(function(){
-                document.getElementById("BotonVolverInicio").style.display = "block"
+                document.getElementById("Pantalla_Ovnislvl3").classList.add("naves-desvanecidas")
+                document.getElementById("Pantalla_Nodrizalvl3").classList.add("naves-desvanecidas")
+                document.getElementById("Pantalla_Ovnis2lvl3").classList.add("naves-desvanecidas")
 
-                Swal.fire({
-                    title: 'Felicitaciones por parte del <br> Grupo Omega<br><br><img src="IMG/Logo_Omega.png" width="120px">',
-                    html: '<b class="Aumentar puntos">Sabia que lo lograrías, nos salvaste de la destrucción, pero ahora nos espera otra lucha, esperemos volverte a ver jugando IRON FIST 2 en un futuro <br><br> CONTACTOS:<br><br> 71727432@certus.edu.pe <br><br> 71663265@certus.edu.pe <br><br> 70845813@certus.edu.pe <br></b>',
-                    icon: 'success',
-                    confirmButtonText: '<span id="Pausear_musica">De acuerdo</span>',
-                    width: '50%',
-                    timer: 100000,
-                    timerProgressBar: true,
-                    allowOutsideClick: true,
-                    allowEscapeKey: false,
-                    allowEnterKey: false,
-                    stopKeydownPropagation: false
-                })
-            }, 20000)
+                setTimeout(function(){
+                    document.getElementById("AgujeroNegro").classList.add("visible")
+
+                    setTimeout(function(){
+                        document.getElementById("StartNivelFinal").style.display = "flex"
+                    }, 3000)
+                }, 3000)
+            }, 8500)
         }
     }
 

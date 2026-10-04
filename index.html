@@ -333,6 +333,7 @@
                     <!--Tiempo con su span para la el final del minuto-->
                     <div class="Tiempolvl3"><h3>TIEMPO</h3><span id="Tiempolvl3">60</span></div>
                     <audio id="Musica_Nivel3" src="soundtrack/nivel3.mp3" preload="auto" loop></audio>
+                    <audio id="Musica_FinalBoss" src="soundtrack/finalboss.mp3" preload="auto" loop></audio>
                     <!--Puntaje con su span que indica el puntaje-->
                     <div class="Puntajelvl3">
                         <h3>PUNTAJE</h3>
@@ -390,7 +391,31 @@
                         <img src="IMG/nave.gif" class="Ovnislvl3" id="Nave3lvl3">
                         <img src="IMG/nave.gif" class="Ovnislvl3" id="Nave4lvl3">
                     </div>
-        
+                    
+                    <!-- Agujero negro del Nivel Final (invisible hasta que las naves malvadas se desvanecen) -->
+<img src="IMG/agujero_negro.gif" class="agujero-negro" id="AgujeroNegro">
+
+<!-- Pantalla de inicio del Nivel Final -->
+<div class="StartNivelFinal" id="StartNivelFinal">
+    <h1 class="TextoFinal" id="TextoFinal">¿LISTO PARA SALVAR<br> EL MUNDO? -> NIVEL FINAL</h1>
+    <div id="DificultadFinal">
+        <img src="IMG/agujero_negro.gif" width="9%">
+        <h1 style="font-size: 27px; font-family: 'Press Start 2P', cursive;">&nbsp;Dificultad: Agujero Negro&nbsp;</h1>
+        <img src="IMG/agujero_negro.gif" width="9%">
+    </div>
+    <div class="Boton" id="PlayFinal">JUGAR</div>
+    <div id="Contenedor_contadorFinal"><span id="RGBFinal"></span></div>
+</div>
+
+<div class="Pausa_PantallaFinal" id="Pausa_PantallaFinal">
+    <h1 class="Mensaje_PauseFinal">EL JUEGO ESTA<br>EN PAUSE</h1>
+</div>
+
+<img src="IMG/Metiorito.png" width="70px" class="MeteoritoFinal" id="MeteoritoFinal">
+<img src="IMG/Metiorito.png" width="70px" class="MeteoritoFinal" id="Meteorito2Final">
+<img src="IMG/Metiorito.png" width="70px" class="MeteoritoFinal" id="Meteorito3Final">
+<img src="IMG/Metiorito.png" width="70px" class="MeteoritoFinal" id="Meteorito4Final">
+
                     <!--Pantalla de créditos-->
                     <div id="Pantalla_creditoslvl3"></div>
                     <div id="Creditoslvl3">
@@ -413,6 +438,7 @@
                 </div>
                 <script src="Ejecucion3.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="EjecucionFinal.js"></script>
 
 
         </section>

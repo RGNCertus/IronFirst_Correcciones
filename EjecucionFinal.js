@@ -4,6 +4,17 @@ NivelFinalGanado = false
 
 function JUEGOFinal() {
 
+    function EfectoDañoAgujero(){
+        var hitOriginal = document.getElementById("Hit_sound")
+        var hitClon = hitOriginal.cloneNode(true)
+        hitClon.volume = hitOriginal.volume
+        hitClon.play()
+
+        document.getElementById("AgujeroNegro").classList.add("dañado")
+        setTimeout(function(){
+            document.getElementById("AgujeroNegro").classList.remove("dañado")
+        }, 150)
+    }
     function Tiempo_DisminurFinal() {
         TiempoFinal--;
         document.getElementById("Tiempolvl3").innerHTML = TiempoFinal
@@ -11,7 +22,7 @@ function JUEGOFinal() {
         if (TiempoFinal == 0) {
             TiempoFinal = 45
             PuntajeFinal = 0
-            document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 10"
+            document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 20"
             document.getElementById("Perdiste_sound").play()
             alert("Lo lamento, el agujero negro te alcanzó. Inténtalo de nuevo")
         }
@@ -41,9 +52,9 @@ function JUEGOFinal() {
         if (evento.target.id == "Meteorito4Final") { PuedeSumarF4 = false; ExplulsarFinal4() }
 
         PuntajeFinal++;
-        document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 10"
+        document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 20"
 
-        if (PuntajeFinal == 10) {
+        if (PuntajeFinal == 20) {
 
             PuntajeFinal = 0
             TiempoFinal = 45
@@ -74,9 +85,25 @@ function JUEGOFinal() {
                 document.getElementById("Pantalla_Nodrizalvl3").classList.remove("naves-malvadas")
                 document.getElementById("Pantalla_Ovnis2lvl3").classList.remove("naves-malvadas")
 
+                document.getElementById("Pantalla_Ovnislvl3").style.transition = "0s"
+                document.getElementById("Pantalla_Ovnislvl3").style.left = "-100%"
+                document.getElementById("Pantalla_Nodrizalvl3").style.transition = "0s"
+                document.getElementById("Pantalla_Nodrizalvl3").style.left = "-100%"
+                document.getElementById("Pantalla_Ovnis2lvl3").style.transition = "0s"
+                document.getElementById("Pantalla_Ovnis2lvl3").style.left = "-100%"
+
                 document.getElementById("Pantalla_Ovnislvl3").classList.remove("naves-desvanecidas")
                 document.getElementById("Pantalla_Nodrizalvl3").classList.remove("naves-desvanecidas")
                 document.getElementById("Pantalla_Ovnis2lvl3").classList.remove("naves-desvanecidas")
+
+                void document.getElementById("Pantalla_Ovnislvl3").offsetWidth
+
+                document.getElementById("Pantalla_Ovnislvl3").style.transition = "6s"
+                document.getElementById("Pantalla_Ovnislvl3").style.left = "7%"
+                document.getElementById("Pantalla_Nodrizalvl3").style.transition = "5s"
+                document.getElementById("Pantalla_Nodrizalvl3").style.left = "10%"
+                document.getElementById("Pantalla_Ovnis2lvl3").style.transition = "6s"
+                document.getElementById("Pantalla_Ovnis2lvl3").style.left = "7%"
 
                 document.getElementById("Musica_Final").play()
 
@@ -115,45 +142,50 @@ function JUEGOFinal() {
     function Meteorito_DireccionF1() {
         DistanciaF1 = 80
         AlturaF1 = Math.round(Math.random() * 450)
-        document.getElementById("MeteoritoFinal").style.transition = "2.6s"
+        document.getElementById("MeteoritoFinal").style.transition = "3.0s"
         document.getElementById("MeteoritoFinal").style.left = DistanciaF1 + "%"
         document.getElementById("MeteoritoFinal").style.top = AlturaF1 + "px"
+        PuedeSumarF1 = true
     }
     setTimeout(Meteorito_DireccionF1, 2000)
-    Intervalo_DirF1 = setInterval(Meteorito_DireccionF1, 2900)
+    Intervalo_DirF1 = setInterval(Meteorito_DireccionF1, 3200) // antes 2900
 
     function Meteorito_DireccionF2() {
         DistanciaF2 = 80
         AlturaF2 = Math.round(Math.random() * 450)
-        document.getElementById("Meteorito2Final").style.transition = "1.9s"
+        document.getElementById("Meteorito2Final").style.transition = "2.3s" // antes 1.9s
         document.getElementById("Meteorito2Final").style.left = DistanciaF2 + "%"
         document.getElementById("Meteorito2Final").style.top = AlturaF2 + "px"
+        PuedeSumarF1 = true
     }
     setTimeout(Meteorito_DireccionF2, 2300)
-    Intervalo_DirF2 = setInterval(Meteorito_DireccionF2, 2300)
+    Intervalo_DirF2 = setInterval(Meteorito_DireccionF2, 2600) // antes 2300
 
     function Meteorito_DireccionF3() {
         DistanciaF3 = 80
         AlturaF3 = Math.round(Math.random() * 450)
-        document.getElementById("Meteorito3Final").style.transition = "1.3s"
+        document.getElementById("Meteorito3Final").style.transition = "1.6s" // antes 1.3s
         document.getElementById("Meteorito3Final").style.left = DistanciaF3 + "%"
         document.getElementById("Meteorito3Final").style.top = AlturaF3 + "px"
+        PuedeSumarF1 = true
     }
     setTimeout(Meteorito_DireccionF3, 2600)
-    Intervalo_DirF3 = setInterval(Meteorito_DireccionF3, 1900)
+    Intervalo_DirF3 = setInterval(Meteorito_DireccionF3, 2200) // antes 1900
 
     function Meteorito_DireccionF4() {
         DistanciaF4 = 80
         AlturaF4 = Math.round(Math.random() * 450)
-        document.getElementById("Meteorito4Final").style.transition = "0.9s"
+        document.getElementById("Meteorito4Final").style.transition = "1.2s" // antes 0.9s
         document.getElementById("Meteorito4Final").style.left = DistanciaF4 + "%"
         document.getElementById("Meteorito4Final").style.top = AlturaF4 + "px"
+        PuedeSumarF1 = true
     }
     setTimeout(Meteorito_DireccionF4, 2900)
-    Intervalo_DirF4 = setInterval(Meteorito_DireccionF4, 1500)
+    Intervalo_DirF4 = setInterval(Meteorito_DireccionF4, 1800) // antes 1500
 
     function ExplulsarFinal1() {
         document.getElementById("Puntos_sound").play()
+        EfectoDañoAgujero()
         DistanciaF1 = "-500"
         AlturaF1 = Math.round(Math.random() * 450)
         document.getElementById("MeteoritoFinal").style.transition = "1.2s"
@@ -163,6 +195,7 @@ function JUEGOFinal() {
 
     function ExplulsarFinal2() {
         document.getElementById("Punto2").play()
+        EfectoDañoAgujero()
         DistanciaF2 = "-500"
         AlturaF2 = Math.round(Math.random() * 450)
         document.getElementById("Meteorito2Final").style.transition = "1.2s"
@@ -172,6 +205,7 @@ function JUEGOFinal() {
 
     function ExplulsarFinal3() {
         document.getElementById("Punto3").play()
+        EfectoDañoAgujero()
         DistanciaF3 = "-500"
         AlturaF3 = Math.round(Math.random() * 450)
         document.getElementById("Meteorito3Final").style.transition = "1.2s"
@@ -181,6 +215,7 @@ function JUEGOFinal() {
 
     function ExplulsarFinal4() {
         document.getElementById("Punto4").play()
+        EfectoDañoAgujero()
         DistanciaF4 = "-500"
         AlturaF4 = Math.round(Math.random() * 450)
         document.getElementById("Meteorito4Final").style.transition = "1.2s"
@@ -208,7 +243,7 @@ function JUEGOFinal() {
 
             TiempoFinal = 45
             PuntajeFinal = 0
-            document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 10"
+            document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 20"
 
             document.getElementById("Perdiste_sound").play()
             alert("EL AGUJERO NEGRO ABSORBIÓ TUS DEFENSAS. ¡INTÉNTALO DE NUEVO!")
@@ -229,12 +264,7 @@ function PLAYFinal() {
     document.getElementById("DificultadFinal").style.left = "-900px"
 
     document.getElementById("Tiempolvl3").innerHTML = 45
-    document.getElementById("Puntajelvl3").innerHTML = "0 / 10"
-
-    document.getElementById("MeteoritoFinal").style.display = "table"
-    document.getElementById("Meteorito2Final").style.display = "table"
-    document.getElementById("Meteorito3Final").style.display = "table"
-    document.getElementById("Meteorito4Final").style.display = "table"
+    document.getElementById("Puntajelvl3").innerHTML = "0 / 20"
 
     function ARRACARFinal() {
         JUEGOFinal()
@@ -317,7 +347,7 @@ function DETENER_JUEGOFinal() {
                 if (TiempoFinal == 0) {
                     TiempoFinal = 45
                     PuntajeFinal = 0
-                    document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 10"
+                    document.getElementById("Puntajelvl3").innerHTML = PuntajeFinal + " / 20"
                     document.getElementById("Perdiste_sound").play()
                     alert("Lo lamento, el agujero negro te alcanzó. Inténtalo de nuevo")
                 }
@@ -335,65 +365,65 @@ function DETENER_JUEGOFinal() {
                 return Math.max((restante / Distancia_Total) * duracionBase, 0.1)
             }
 
-            var duracionF1 = duracionRestanteFinal("MeteoritoFinal", DistanciaF1, 2.6)
+            var duracionF1 = duracionRestanteFinal("MeteoritoFinal", DistanciaF1, 3.0) // antes 2.6
             document.getElementById("MeteoritoFinal").style.transition = duracionF1 + "s"
             document.getElementById("MeteoritoFinal").style.left = DistanciaF1 + "%"
 
-            var duracionF2 = duracionRestanteFinal("Meteorito2Final", DistanciaF2, 1.9)
+            var duracionF2 = duracionRestanteFinal("Meteorito2Final", DistanciaF2, 2.3) // antes 1.9
             document.getElementById("Meteorito2Final").style.transition = duracionF2 + "s"
             document.getElementById("Meteorito2Final").style.left = DistanciaF2 + "%"
 
-            var duracionF3 = duracionRestanteFinal("Meteorito3Final", DistanciaF3, 1.3)
+            var duracionF3 = duracionRestanteFinal("Meteorito3Final", DistanciaF3, 1.6) // antes 1.3
             document.getElementById("Meteorito3Final").style.transition = duracionF3 + "s"
             document.getElementById("Meteorito3Final").style.left = DistanciaF3 + "%"
 
-            var duracionF4 = duracionRestanteFinal("Meteorito4Final", DistanciaF4, 0.9)
+            var duracionF4 = duracionRestanteFinal("Meteorito4Final", DistanciaF4, 1.2) // antes 0.9
             document.getElementById("Meteorito4Final").style.transition = duracionF4 + "s"
             document.getElementById("Meteorito4Final").style.left = DistanciaF4 + "%"
 
             function Meteorito_DireccionF1() {
                 DistanciaF1 = 80
                 AlturaF1 = Math.round(Math.random() * 450)
-                document.getElementById("MeteoritoFinal").style.transition = "2.6s"
+                document.getElementById("MeteoritoFinal").style.transition = "3.0s" // antes 2.6s
                 document.getElementById("MeteoritoFinal").style.left = DistanciaF1 + "%"
                 document.getElementById("MeteoritoFinal").style.top = AlturaF1 + "px"
                 PuedeSumarF1 = true
             }
             setTimeout(Meteorito_DireccionF1, 2000)
-            Intervalo_DirF1 = setInterval(Meteorito_DireccionF1, 2900)
+            Intervalo_DirF1 = setInterval(Meteorito_DireccionF1, 3200) // antes 2900
 
             function Meteorito_DireccionF2() {
                 DistanciaF2 = 80
                 AlturaF2 = Math.round(Math.random() * 450)
-                document.getElementById("Meteorito2Final").style.transition = "1.9s"
+                document.getElementById("Meteorito2Final").style.transition = "2.3s" // antes 1.9s
                 document.getElementById("Meteorito2Final").style.left = DistanciaF2 + "%"
                 document.getElementById("Meteorito2Final").style.top = AlturaF2 + "px"
                 PuedeSumarF2 = true
             }
             setTimeout(Meteorito_DireccionF2, 2000)
-            Intervalo_DirF2 = setInterval(Meteorito_DireccionF2, 2300)
+            Intervalo_DirF2 = setInterval(Meteorito_DireccionF2, 2600) // antes 2300
 
             function Meteorito_DireccionF3() {
                 DistanciaF3 = 80
                 AlturaF3 = Math.round(Math.random() * 450)
-                document.getElementById("Meteorito3Final").style.transition = "1.3s"
+                document.getElementById("Meteorito3Final").style.transition = "1.6s" // antes 1.3s
                 document.getElementById("Meteorito3Final").style.left = DistanciaF3 + "%"
                 document.getElementById("Meteorito3Final").style.top = AlturaF3 + "px"
                 PuedeSumarF3 = true
             }
             setTimeout(Meteorito_DireccionF3, 2000)
-            Intervalo_DirF3 = setInterval(Meteorito_DireccionF3, 1900)
+            Intervalo_DirF3 = setInterval(Meteorito_DireccionF3, 2200) // antes 1900
 
             function Meteorito_DireccionF4() {
                 DistanciaF4 = 80
                 AlturaF4 = Math.round(Math.random() * 450)
-                document.getElementById("Meteorito4Final").style.transition = "0.9s"
+                document.getElementById("Meteorito4Final").style.transition = "1.2s" // antes 0.9s
                 document.getElementById("Meteorito4Final").style.left = DistanciaF4 + "%"
                 document.getElementById("Meteorito4Final").style.top = AlturaF4 + "px"
                 PuedeSumarF4 = true
             }
             setTimeout(Meteorito_DireccionF4, 2000)
-            Intervalo_DirF4 = setInterval(Meteorito_DireccionF4, 1500)
+            Intervalo_DirF4 = setInterval(Meteorito_DireccionF4, 1800) // antes 1500
 
             ActivoFinal = 1
         }

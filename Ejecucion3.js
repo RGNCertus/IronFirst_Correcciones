@@ -62,6 +62,9 @@ function JUEGOlvl3() {
             clearInterval(Intervalo_Dir4lvl3)
             clearInterval(Restar_Tiempolvl3)
 
+            document.getElementById("Triunfo").pause()
+            document.getElementById("Triunfo").currentTime = 0
+
             document.getElementById("Musica_FinalBoss").play()
 
             document.getElementById("Pantalla_Ovnislvl3").classList.add("naves-malvadas")

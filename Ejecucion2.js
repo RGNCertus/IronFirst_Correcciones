@@ -10,13 +10,14 @@ Puntajelvl2 = 0 //VARIABLE DE INICIO PUNTOS
 //PARA QUE EL JUEGO INICIE UNA VEZ SE PRESIONE JUGAR
 function JUEGOlvl2(){
 
-    function Tiempo_Disminurlvl2(){ //FUNCION QUE REDUCE EL TIEMPO Y RESETEAL EL RESULTADO UNA VEZ LLEGUE A 0
-        Tiempolvl2--;
-        document.getElementById("Tiempolvl2").innerHTML = Tiempolvl2
-        if(Tiempolvl2 == 0){
-            Tiempolvl2 = 60
-            Puntajelvl2 = 0
-            alert("El tiempo se agotó, lo lamento, de seguro lo lograrás para la siguiente")} }
+function Tiempo_Disminurlvl2(){
+    Tiempolvl2--;
+    document.getElementById("Tiempolvl2").innerHTML = Tiempolvl2
+    if(Tiempolvl2 == 0){
+        Tiempolvl2 = 60
+        Puntajelvl2 = 0
+        document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 25"
+        alert("El tiempo se agotó, lo lamento, de seguro lo lograrás para la siguiente")} }
 
     
         Restar_Tiempolvl2 = setInterval(Tiempo_Disminurlvl2, 1000)
@@ -30,20 +31,18 @@ function JUEGOlvl2(){
         //FUNCION QUE UNICAMENTE AUMENTA PUNTOS Y RESETEA LAS VARIABLES AL LLEGAR A CIERTO LIMITE
         function Aumentar_Puntoslvl2(){
             Puntajelvl2++;
-            document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 4"
+            document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 25"
             if(Puntajelvl2 == 30){
                 Puntajelvl2 = 0 
                 Tiempolvl2 = 60
 
                 document.getElementById("Tiempolvl2").innerHTML = 60
-                document.getElementById("Puntajelvl2").innerHTML = 0+"&nbsp;/&nbsp;"+30
+                document.getElementById("Puntajelvl2").innerHTML = 0+"&nbsp;/&nbsp;"+25
                 document.getElementById("Musica_Nivel2").pause()
                 document.getElementById("Triunfo").play()
                 document.getElementById("NEXT").addEventListener('click', Habilitar_Siguienten_LVL)
                 function Habilitar_Siguienten_LVL(){
-                document.getElementById("NIVEL_01").style.display = "none"
-                document.getElementById("NIVEL_02").style.display = "none"
-                document.getElementById("NIVEL3").style.display = "block"}
+                MostrarNivel("NIVEL3")}
                             
                 function Ganaste_Pantallalvl2(){
 
@@ -165,7 +164,7 @@ function JUEGOlvl2(){
         
         //ESTA FUNCION SE ENCARGA DE ALERTARTE UNA VEZ EL METIORITO CRUZE LA LINEA CON UN PERDISTE
         //TAMBIEN RESETEA LOS VALORES Y LLEVA A LOS METIORITOS FUERA DEL MAPA DE MANERA INSTANTANEA
-        function perdistelvl2 (){
+        function perdistelvl2(){
             if((document.getElementById("Meteioritolvl2").offsetLeft > 630) ||
             (document.getElementById("Meteiorito2lvl2").offsetLeft > 630) ||
             (document.getElementById("Meteiorito3lvl2").offsetLeft > 630))
@@ -186,7 +185,8 @@ function JUEGOlvl2(){
                 document.getElementById("Meteiorito3lvl2").style.transition = "0s"
 
                 Tiempolvl2 = 60
-                Puntajelvl2 = 0 }
+                Puntajelvl2 = 0
+                document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 25" }
         
             else {
                 document.getElementById("Meteioritolvl2").style.transition = "2s"

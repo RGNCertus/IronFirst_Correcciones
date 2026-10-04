@@ -8,8 +8,9 @@ function JUEGOlvl3() {
         document.getElementById("Tiempolvl3").innerHTML = Tiempolvl3
 
         if (Tiempolvl3 == 0) {
-            Tiempolvl3 = 0
+            Tiempolvl3 = 60
             Puntajelvl3 = 0
+            document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
             alert("Lo lamento perdiste")
         }
     }
@@ -26,7 +27,7 @@ function JUEGOlvl3() {
         Puntajelvl3++;
         document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 4"
 
-        if (Puntajelvl3 == 4) {
+        if (Puntajelvl3 == 30) {
 
             Puntajelvl3 = 0
             Tiempolvl3 = 60
@@ -192,6 +193,7 @@ function JUEGOlvl3() {
         setTimeout(Meteorito_Direccion1lvl3, 2000)
         Tiempolvl3 = 60
         Puntajelvl3 = 0
+        document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
     }
 
     if (document.getElementById("Meteorito2lvl3").offsetLeft > 630) {
@@ -202,6 +204,7 @@ function JUEGOlvl3() {
         setTimeout(Meteorito_Direccion2lvl3, 2000)
         Tiempolvl3 = 60
         Puntajelvl3 = 0
+        document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
     }
 
     if (document.getElementById("Meteorito3lvl3").offsetLeft > 630) {
@@ -212,6 +215,7 @@ function JUEGOlvl3() {
         setTimeout(Meteorito_Direccion3lvl3, 2600)
         Tiempolvl3 = 60
         Puntajelvl3 = 0
+        document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
     }
 
     if (document.getElementById("Meteorito4lvl3").offsetLeft > 630) {
@@ -222,6 +226,7 @@ function JUEGOlvl3() {
         setTimeout(Meteorito_Direccion4lvl3, 2900)
         Tiempolvl3 = 60
         Puntajelvl3 = 0
+        document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
     }
 
     setInterval(perdistelvl3, 100)
@@ -327,7 +332,7 @@ function DETENER_JUEGOlvl3() {
 
                 if (Tiempolvl3 == 0) {
 
-                    Tiempolvl3 = 51
+                    Tiempolvl3 = 60
                     Puntajelvl3 = 0
                     alert("Lo lamento perdiste")
                 }

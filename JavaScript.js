@@ -147,7 +147,18 @@ Graficos = 1
 
 
 
+//Funcion para cambiar de nivel sin dejar restos visuales de niveles anteriores
+function MostrarNivel(idNivelAMostrar){
+    document.getElementById("NIVEL_01").classList.add("nivel-oculto")
+    document.getElementById("NIVEL_02").classList.add("nivel-oculto")
+    document.getElementById("NIVEL3").classList.add("nivel-oculto")
+    document.getElementById("GANASTE_PANTALLA").style.display = "none"
+    document.getElementById("GanastePantallaLvL2").style.display = "none"
 
+    var nivelAMostrar = document.getElementById(idNivelAMostrar)
+    nivelAMostrar.classList.remove("nivel-oculto")
+    nivelAMostrar.style.display = "block"
+}
 
 
 //CONTENEDOR QUE CONTEIENE TOO EL JUEGO
@@ -161,7 +172,7 @@ function JUEGO(){
         if(Tiempo == 0){
             Tiempo = 60
             Puntaje = 0
-            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30"
+            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;20"
             document.getElementById("Perdiste_sound").play()
             alert("Lo lamento perdiste")} }
 
@@ -186,18 +197,17 @@ function JUEGO(){
 
             Puntaje++;
             //Corrección prueba 2
-            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30"
-            if(Puntaje == 30){
+            document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;20"
+            if(Puntaje == 20){
                 Puntaje = 0 
                 Tiempo = 60
 
 
                 document.getElementById("NEXT").addEventListener('click', Habilitar_Siguienten_LVL)
                 function Habilitar_Siguienten_LVL(){
-                document.getElementById("NIVEL_01").style.display = "none"
-                document.getElementById("NIVEL_02").style.display = "block"}
+                MostrarNivel("NIVEL_02")}
                 document.getElementById("Tiempo").innerHTML = 60
-                document.getElementById("Puntaje").innerHTML = 0+"&nbsp;/&nbsp;"+30
+                document.getElementById("Puntaje").innerHTML = 0+"&nbsp;/&nbsp;"+20
                 document.getElementById("Triunfo").play()
                 document.getElementById("Musica_Nivel1").pause()
                 document.getElementById("Puntos_sound").pause()
@@ -310,7 +320,7 @@ function JUEGO(){
                 
                 Tiempo = 60
                 Puntaje = 0
-                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30" }
+                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;20" }
         
             else {
                 document.getElementById("Meteiorito").style.transition = "2.4s"
@@ -397,7 +407,7 @@ function JUEGO(){
                                     Tiempo = 60
 
                                     Puntaje = 0
-                                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;30"
+                                document.getElementById("Puntaje").innerHTML = Puntaje + "&nbsp;/&nbsp;20"
                                 document.getElementById("Perdiste_sound").play()    
                                 alert("Lo lamento perdiste")
                                 document.getElementById("Meteiorito").style.left = "-70%"

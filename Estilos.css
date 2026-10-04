@@ -873,6 +873,7 @@ margin-left: 12%; }
     }
 /*BLOQUEO DE NIVELES*/
 
+.nivel-oculto { display: none !important; }
 #NIVEL_02 {display: none;}
 #NIVEL3 {display: none;}
 
@@ -919,9 +920,9 @@ margin-left: 12%; }
         font-family: 'Press Start 2P', cursive;
         line-height: 70px;}
 
-    #Dificultad {display: flex; 
-    justify-content: center; align-items: center; gap: 1%; width: 100%;
-    position: absolute; top: 45%; left: 0px; transition: 2s; pointer-events: none;}
+#Dificultad {display: flex; 
+justify-content: center; align-items: center; gap: 1%; width: 70%;
+position: absolute; top: 45%; left: 15%; transition: 2s; pointer-events: none;}
     
     #Contenedor_contadorlvl2 {height: 100%; 
     display: table; position: absolute;}
@@ -1064,9 +1065,9 @@ margin-left: 12%; }
         font-family: 'Press Start 2P', cursive;
     }
     
-    #Dificultadlvl3{display: flex;
-    justify-content: center; align-items: center; gap: 1%; width: 100%;
-    top: 49%; position: absolute; left: 0%; transition: 5s; pointer-events: none;}
+#Dificultadlvl3{display: flex;
+justify-content: center; align-items: center; gap: 1%; width: 70%;
+top: 49%; position: absolute; left: 15%; transition: 5s; pointer-events: none;}
 
     /*TITULO CENTRAL DE START*/
     .Textolvl3 {

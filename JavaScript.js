@@ -84,16 +84,22 @@ function irASlide(indice) {
 
 Tiempo = 60 //VARIBLE DE INICIO TIEMPO
 Puntaje = 0 //VARIABLE DE INICIO PUNTOS
+Nivel1Ganado = false
 
 //Musica de portada y reglas
-//El navegador Chrome bloquea los audios automaticos al inicio, lo pondré temporalmente para que inicie con un clic
-document.addEventListener('click', () => {
-    const musicaIntro = document.getElementById("Musica_Intro");
+if(sessionStorage.getItem("ReproducirIntro") == "si"){
+    sessionStorage.removeItem("ReproducirIntro")
+    document.getElementById("Musica_Intro").play().catch(error => console.log("Error al reproducir:", error))
+} else {
+    //El navegador Chrome bloquea los audios automaticos al inicio, lo pondré temporalmente para que inicie con un clic
+    document.addEventListener('click', () => {
+        const musicaIntro = document.getElementById("Musica_Intro");
 
-    if (musicaIntro.paused) {
-        musicaIntro.play().catch(error => console.log("Error al reproducir:", error));
-    }
-}, { once: true });
+        if (musicaIntro.paused) {
+            musicaIntro.play().catch(error => console.log("Error al reproducir:", error));
+        }
+    }, { once: true });
+}
 
 //Volumen predeterminado de los soundtracks de cada nivel (0.0 = silencio, 1.0 = volumen original)
 document.getElementById("Musica_Nivel1").volume = 0.5
@@ -201,7 +207,7 @@ function JUEGO(){
             if(Puntaje == 20){
                 Puntaje = 0 
                 Tiempo = 60
-
+                Nivel1Ganado = true
 
                 document.getElementById("NEXT").addEventListener('click', Habilitar_Siguienten_LVL)
                 function Habilitar_Siguienten_LVL(){
@@ -376,6 +382,7 @@ function JUEGO(){
                 Activo = 1 
                     //HACE QUE EL JUEGO SE DETENGA
                     function PAUSE(){ //Colocar la funcion de pausa y reanudar
+                        if (Nivel1Ganado) { return }
                         //SI LLEGA A UNA EJECUTA LA FUNCION PAUSE
                         if (Activo == 1){
                         
@@ -442,7 +449,9 @@ function JUEGO(){
                         document.getElementById("Meteiorito2").style.transition = duracion2 + "s"
                         document.getElementById("Meteiorito2").style.left = Distancia2 + "%"
 
-                        
+                        Puede_Sumar = true
+                        Puede_Sumar2 = true
+
                         function Metiorito_Direccion(){
                             Distancia1 = 80
                             Altura1 = Math.round(Math.random()* 450)
@@ -626,3 +635,8 @@ function Reloj_Tiempo(){
 Reloj_Tiempo()
 
 setInterval(Reloj_Tiempo, 1000)
+
+function VolverInicio(){
+    sessionStorage.setItem("ReproducirIntro", "si")
+    location.reload()
+}

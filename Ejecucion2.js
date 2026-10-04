@@ -1,6 +1,6 @@
 Tiempolvl2 = 61 //VARIBLE DE INICIO TIEMPO
 Puntajelvl2 = 0 //VARIABLE DE INICIO PUNTOS
-
+Nivel2Ganado = false
 
 
 
@@ -32,9 +32,10 @@ function Tiempo_Disminurlvl2(){
         function Aumentar_Puntoslvl2(){
             Puntajelvl2++;
             document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 25"
-            if(Puntajelvl2 == 30){
+            if(Puntajelvl2 == 25){
                 Puntajelvl2 = 0 
                 Tiempolvl2 = 60
+                Nivel2Ganado = true
 
                 document.getElementById("Tiempolvl2").innerHTML = 60
                 document.getElementById("Puntajelvl2").innerHTML = 0+"&nbsp;/&nbsp;"+25
@@ -170,9 +171,7 @@ function Tiempo_Disminurlvl2(){
             (document.getElementById("Meteiorito3lvl2").offsetLeft > 630))
             
             {
-                document.getElementById("Perdiste_sound").play()
-            
-                alert("YA ES DEMASIADO TARDE, LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE Y LO MEJOR ES ESPERAR LO PEOR")
+                
 
 
                 document.getElementById("Meteioritolvl2").style.left = "-70%"
@@ -186,7 +185,11 @@ function Tiempo_Disminurlvl2(){
 
                 Tiempolvl2 = 60
                 Puntajelvl2 = 0
-                document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 25" }
+                document.getElementById("Puntajelvl2").innerHTML = Puntajelvl2 + " / 25" 
+            
+                document.getElementById("Perdiste_sound").play()
+                alert("YA ES DEMASIADO TARDE, LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE Y LO MEJOR ES ESPERAR LO PEOR")
+            }
         
             else {
                 document.getElementById("Meteioritolvl2").style.transition = "2s"
@@ -194,7 +197,7 @@ function Tiempo_Disminurlvl2(){
                 document.getElementById("Meteiorito3lvl2").style.transition = "2s"           
             } }
 
-        setInterval(perdistelvl2, 1)//LE COLOCAMOS UNO PARA QUE SIEMPRE SE ESTE EJECUTANDO, DADO A 
+        setInterval(perdistelvl2, 100)//LE COLOCAMOS UNO PARA QUE SIEMPRE SE ESTE EJECUTANDO, DADO A 
         //QUE NO SABEMOS CUANDO EL METIORITO VA A SUPERAR EL LIMITE
         }
 
@@ -242,6 +245,7 @@ function Tiempo_Disminurlvl2(){
                 Activolvl2 = 1 
                     //HACE QUE EL JUEGO SE DETENGA
                     function PAUSElvl2(){
+                        if (Nivel2Ganado) { return }
                         //SI LLEGA A UNA EJECUTA LA FUNCION PAUSE
                         if (Activolvl2 == 1){
                         document.getElementById("Pausa_Pantallalvl2").style.display = "table"

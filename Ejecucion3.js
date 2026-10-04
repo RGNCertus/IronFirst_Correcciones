@@ -1,5 +1,6 @@
 Tiempolvl3 = 60 //VARIBLE DE INICIO TIEMPO
 Puntajelvl3 = 0 //VARIABLE DE INICIO PUNTOS
+Nivel3Ganado = false
 
 function JUEGOlvl3() {
 
@@ -31,24 +32,7 @@ function JUEGOlvl3() {
 
             Puntajelvl3 = 0
             Tiempolvl3 = 60
-
-            function Contactos(){
-                Swal.fire({
-                    title: 'Felicitaciones por parte del <br> Grupo Omega<br><br><img src="IMG/Logo_Omega.png" width="120px">',
-                    html: '<b class="Aumentar puntos">Sabia que lo lograrías, nos salvaste de la destrucción, pero ahora nos espera otra lucha, esperemos volverte a ver jugando IRON FIST 2 en un futuro <br><br> CONTACTOS:<br><br> 71727432@certus.edu.pe <br><br> 71663265@certus.edu.pe <br><br> 70845813@certus.edu.pe <br></b>',
-                    icon: 'success',
-                    confirmButtonText: '<span id="Pausear_musica">De acuerdo</span>',
-                    width: '50%',
-                    timer: 100000,
-                    timerProgressBar: true,
-                    allowOutsideClick: true,
-                    allowEscapeKey: false,
-                    allowEnterKey: false,
-                    stopKeydownPropagation: false
-                });
-            }
-
-            Contactos()
+            Nivel3Ganado = true
 
             document.getElementById("Musica_Nivel3").pause()
             document.getElementById("Triunfo").play()
@@ -79,6 +63,7 @@ function JUEGOlvl3() {
             clearInterval(Restar_Tiempolvl3)
 
             document.getElementById("Musica_Final").play()
+
             document.getElementById("Pantalla_Ovnislvl3").style.left = "7%"
             document.getElementById("Pantalla_Ovnislvl3").style.transition = "6s"
             document.getElementById("Pantalla_Nodrizalvl3").style.left = "10%"
@@ -95,6 +80,24 @@ function JUEGOlvl3() {
             }
 
             setTimeout(Creditoslvl3, 5000)
+
+            setTimeout(function(){
+                document.getElementById("BotonVolverInicio").style.display = "block"
+
+                Swal.fire({
+                    title: 'Felicitaciones por parte del <br> Grupo Omega<br><br><img src="IMG/Logo_Omega.png" width="120px">',
+                    html: '<b class="Aumentar puntos">Sabia que lo lograrías, nos salvaste de la destrucción, pero ahora nos espera otra lucha, esperemos volverte a ver jugando IRON FIST 2 en un futuro <br><br> CONTACTOS:<br><br> 71727432@certus.edu.pe <br><br> 71663265@certus.edu.pe <br><br> 70845813@certus.edu.pe <br></b>',
+                    icon: 'success',
+                    confirmButtonText: '<span id="Pausear_musica">De acuerdo</span>',
+                    width: '50%',
+                    timer: 100000,
+                    timerProgressBar: true,
+                    allowOutsideClick: true,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    stopKeydownPropagation: false
+                })
+            }, 20000)
         }
     }
 
@@ -185,48 +188,33 @@ function JUEGOlvl3() {
 
     function perdistelvl3() {
 
-        if (document.getElementById("Meteoritolvl3").offsetLeft > 630) {
-            alert("YA ES DEMASIADO TARDE LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE LO MEJOR ES ESPERAR LO PEOR")
-            document.getElementById("Perdiste_sound").play()
+        if (document.getElementById("Meteoritolvl3").offsetLeft > 630 ||
+            document.getElementById("Meteorito2lvl3").offsetLeft > 630 ||
+            document.getElementById("Meteorito3lvl3").offsetLeft > 630 ||
+            document.getElementById("Meteorito4lvl3").offsetLeft > 630) {
+
             document.getElementById("Meteoritolvl3").style.left = "-70%"
             document.getElementById("Meteoritolvl3").style.transition = "0s"
-            setTimeout(Meteorito_Direccionlvl3, 2000) 
-            Tiempolvl3 = 60
-            Puntajelvl3 = 0
-            document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
-        }
+            setTimeout(Meteorito_Direccionlvl3, 2000)
 
-        if (document.getElementById("Meteorito2lvl3").offsetLeft > 630) {
-            alert("YA ES DEMASIADO TARDE LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE LO MEJOR ES ESPERAR LO PEOR")
-            document.getElementById("Perdiste_sound").play()
             document.getElementById("Meteorito2lvl3").style.left = "-70%"
             document.getElementById("Meteorito2lvl3").style.transition = "0s"
             setTimeout(Meteorito_Direccion2lvl3, 2000)
-            Tiempolvl3 = 60
-            Puntajelvl3 = 0
-            document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
-        }
 
-        if (document.getElementById("Meteorito3lvl3").offsetLeft > 630) {
-            alert("YA ES DEMASIADO TARDE LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE LO MEJOR ES ESPERAR LO PEOR")
-            document.getElementById("Perdiste_sound").play()
             document.getElementById("Meteorito3lvl3").style.left = "-70%"
             document.getElementById("Meteorito3lvl3").style.transition = "0s"
             setTimeout(Meteorito_Direccion3lvl3, 2600)
-            Tiempolvl3 = 60
-            Puntajelvl3 = 0
-            document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
-        }
 
-        if (document.getElementById("Meteorito4lvl3").offsetLeft > 630) {
-            alert("YA ES DEMASIADO TARDE LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE LO MEJOR ES ESPERAR LO PEOR")
-            document.getElementById("Perdiste_sound").play()
             document.getElementById("Meteorito4lvl3").style.left = "-70%"
             document.getElementById("Meteorito4lvl3").style.transition = "0s"
             setTimeout(Meteorito_Direccion4lvl3, 2900)
+
             Tiempolvl3 = 60
             Puntajelvl3 = 0
             document.getElementById("Puntajelvl3").innerHTML = Puntajelvl3 + " / 30"
+
+            document.getElementById("Perdiste_sound").play()
+            alert("YA ES DEMASIADO TARDE LOS METEORITOS DESTRUYERON GRAN PARTE DEL CONTINENTE LO MEJOR ES ESPERAR LO PEOR")
         }
     }
 
@@ -284,6 +272,8 @@ function DETENER_JUEGOlvl3() {
 
     function PAUSElvl3() {
 
+        if (Nivel3Ganado) { return }
+
         if (Activolvl3 == 1) {
 
             document.getElementById("Pausa_Pantallalvl3").style.display = "table"
@@ -301,6 +291,11 @@ function DETENER_JUEGOlvl3() {
                 clearInterval(Intervalo_Dir3lvl3)
                 clearInterval(Intervalo_Dir4lvl3)
 
+                document.getElementById("Meteoritolvl3").style.transition = "0s"
+                document.getElementById("Meteorito2lvl3").style.transition = "0s"
+                document.getElementById("Meteorito3lvl3").style.transition = "0s"
+                document.getElementById("Meteorito4lvl3").style.transition = "0s"
+
                 document.getElementById("Meteoritolvl3").style.left = document.getElementById("Meteoritolvl3").offsetLeft + "px"
                 document.getElementById("Meteorito2lvl3").style.left = document.getElementById("Meteorito2lvl3").offsetLeft + "px"
                 document.getElementById("Meteorito3lvl3").style.left = document.getElementById("Meteorito3lvl3").offsetLeft + "px"
@@ -312,6 +307,7 @@ function DETENER_JUEGOlvl3() {
                 document.getElementById("Meteorito4lvl3").style.top = document.getElementById("Meteorito4lvl3").offsetTop + "px"
             }
 
+            Meteorito_detenerlvl3()
             Pause_offlvl3 = setInterval(Meteorito_detenerlvl3, 100)
 
             Activolvl3 = 2

@@ -61,6 +61,7 @@ function JUEGOlvl3() {
             clearInterval(Intervalo_Dir3lvl3)
             clearInterval(Intervalo_Dir4lvl3)
             clearInterval(Restar_Tiempolvl3)
+            clearInterval(Intervalo_Rastrolvl3)
 
             document.getElementById("Triunfo").pause()
             document.getElementById("Triunfo").currentTime = 0
@@ -178,6 +179,23 @@ function JUEGOlvl3() {
         document.getElementById("Meteorito4lvl3").style.top = Alturalvl3 + "px"
         document.getElementById("Meteorito4lvl3").style.transition = "1.7s"
     }
+
+    function CrearRastroCometa(meteoroId){
+        var meteoro = document.getElementById(meteoroId)
+        var rastro = document.createElement("div")
+        rastro.className = "rastro-cometa"
+        rastro.style.left = meteoro.offsetLeft + "px"
+        rastro.style.top = (meteoro.offsetTop + 20) + "px" //lo centra un poco mejor respecto a la imagen
+        meteoro.parentElement.appendChild(rastro)
+        setTimeout(function(){ rastro.remove() }, 500)
+    }
+
+    Intervalo_Rastrolvl3 = setInterval(function(){
+        CrearRastroCometa("Meteoritolvl3")
+        CrearRastroCometa("Meteorito2lvl3")
+        CrearRastroCometa("Meteorito3lvl3")
+        CrearRastroCometa("Meteorito4lvl3")
+    }, 70)
 
     function perdistelvl3() {
 

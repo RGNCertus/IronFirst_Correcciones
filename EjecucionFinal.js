@@ -156,7 +156,7 @@ function JUEGOFinal() {
         document.getElementById("Meteorito2Final").style.transition = "2.3s" // antes 1.9s
         document.getElementById("Meteorito2Final").style.left = DistanciaF2 + "%"
         document.getElementById("Meteorito2Final").style.top = AlturaF2 + "px"
-        PuedeSumarF1 = true
+        PuedeSumarF2 = true
     }
     setTimeout(Meteorito_DireccionF2, 2300)
     Intervalo_DirF2 = setInterval(Meteorito_DireccionF2, 2600) // antes 2300
@@ -167,7 +167,7 @@ function JUEGOFinal() {
         document.getElementById("Meteorito3Final").style.transition = "1.6s" // antes 1.3s
         document.getElementById("Meteorito3Final").style.left = DistanciaF3 + "%"
         document.getElementById("Meteorito3Final").style.top = AlturaF3 + "px"
-        PuedeSumarF1 = true
+        PuedeSumarF3 = true
     }
     setTimeout(Meteorito_DireccionF3, 2600)
     Intervalo_DirF3 = setInterval(Meteorito_DireccionF3, 2200) // antes 1900
@@ -178,7 +178,7 @@ function JUEGOFinal() {
         document.getElementById("Meteorito4Final").style.transition = "1.2s" // antes 0.9s
         document.getElementById("Meteorito4Final").style.left = DistanciaF4 + "%"
         document.getElementById("Meteorito4Final").style.top = AlturaF4 + "px"
-        PuedeSumarF1 = true
+        PuedeSumarF4 = true
     }
     setTimeout(Meteorito_DireccionF4, 2900)
     Intervalo_DirF4 = setInterval(Meteorito_DireccionF4, 1800) // antes 1500

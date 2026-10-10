@@ -86,6 +86,7 @@ function JUEGOlvl3() {
 
                 setTimeout(function(){
                     document.getElementById("AgujeroNegro").classList.add("visible")
+                    document.getElementById("NIVEL3").classList.add("modo-final")
 
                     setTimeout(function(){
                         document.getElementById("StartNivelFinal").style.display = "flex"

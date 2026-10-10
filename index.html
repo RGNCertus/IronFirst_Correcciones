@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilos.css" >
+    <link rel="stylesheet" href="Extras.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">  
     <!--iMPORTE UN TIPO DE LETA-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,7 +16,19 @@
 </head>
 <body id="Fondo" >
 
+<div id="PantallaAviso">
+    <div class="cinta-precaucion cinta-superior"></div>
 
+    <div class="aviso-contenido">
+        <h2>AVISO</h2>
+        <p>Este juego está basado en el proyecto <strong>IRON FIST</strong>, desarrollado originalmente por el equipo de desarrollo<strong> Omega Games</strong>, integrado por Fredy Palomino, David Chambilla, Renzo Blas y Brandon Montiveros.</p>
+        <p>Esta versión fue revisada, corregida y mejorada por el equipo de desarrollo <strong> 3x3 Studios</strong> con fines exclusivamente académicos. Todos los derechos del proyecto original pertenecen a sus autores.</p>
+        <button class="Boton" id="BotonContinuarAviso">CONTINUAR</button>
+    </div>
+
+    <div class="cinta-precaucion cinta-inferior"></div>
+</div>
+<script src="Aviso.js"></script>
 
 
 <!--SECCION - CONTENEDOR GENERAL--------------------------------------------------------------->
@@ -234,7 +247,7 @@
             
             <div style="display: flex; justify-content: center; align-items: center; position: absolute; width: 70%; left: 15%;">
             <img src="IMG/ima1.png" width="9%" id="chems1" class="icono-dificultad">
-            <h1 class="Pollo">Dificultad: Meteorito</h1>
+            <h1 class="Pollo texto-dificultad">Dificultad: Meteorito</h1>
             <img src="IMG/ima1.png" width="9%" id="chems2" class="icono-dificultad">
             </div>
 
@@ -295,7 +308,7 @@
             <h1 class="Texolvl2" id="Texolvl2">¿LISTO PARA SALVAR<br> EL MUNDO? -> LVL: 2 </h1>
             <div id="Dificultad">
                 <img src="IMG/ima2.png" width="9%" class="icono-dificultad">
-                <h1 style="font-size: 27px; font-family: 'Press Start 2P', cursive;">&nbsp;Dificultad:Asteroide&nbsp;</h1>
+                <h1 class="texto-dificultad">Dificultad: Asteroide</h1>
                 <img src="IMG/ima2.png" width="9%" class="icono-dificultad">
             </div>
             <!--Titulo de la seccion start-->
@@ -371,8 +384,7 @@
                         <!--Dificultad-->
                         <div class="Dificultadlvl3" id="Dificultadlvl3">
                         <img src="IMG/ima3.png" width="16%" class="icono-dificultad">
-                        <h1 style="font-size: 27px; font-family: 'Press Start 2P', cursive;">
-                        Dificultad: Cometa</h1>
+                        <h1 class="texto-dificultad">Dificultad: Cometa</h1>
                         <img src="IMG/ima3.png" width="16%" class="icono-dificultad">
                         </div>
                         <!--Span que contiene el conteo-->
@@ -401,7 +413,7 @@
     <h1 class="TextoFinal" id="TextoFinal">¿LISTO PARA SALVAR<br> EL MUNDO? -> NIVEL FINAL</h1>
     <div id="DificultadFinal">
         <img src="IMG/ima4.png" width="9%" class="icono-dificultad">
-        <h1 style="font-size: 27px; font-family: 'Press Start 2P', cursive;">&nbsp;Dificultad: Agujero Negro&nbsp;</h1>
+        <h1 class="texto-dificultad">Dificultad: Agujero Negro</h1>
         <img src="IMG/ima4.png" width="9%" class="icono-dificultad">
     </div>
     <div class="Boton" id="PlayFinal">JUGAR</div>
@@ -479,6 +491,8 @@
 </section>
 
 <!--llamado al script js-->
+<script src="Puntuacion.js"></script>
+<script src="Creditos.js"></script>
 <script src="JavaScript.js"></script>
 
 

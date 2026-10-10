@@ -59,6 +59,7 @@ function JUEGOFinal() {
             PuntajeFinal = 0
             TiempoFinal = 45
             NivelFinalGanado = true
+            EstadisticasJuego.terminado = true
 
             document.getElementById("Musica_FinalBoss").pause()
             document.getElementById("Triunfo").play()
@@ -105,35 +106,13 @@ function JUEGOFinal() {
                 document.getElementById("Pantalla_Ovnis2lvl3").style.transition = "6s"
                 document.getElementById("Pantalla_Ovnis2lvl3").style.left = "7%"
 
+                // La música de victoria arranca apenas reaparecen las naves
                 document.getElementById("Musica_Final").play()
 
-                function CreditosFinal() {
-                    document.getElementById("Pantalla_creditoslvl3").style.background = "black"
-                    document.getElementById("Creditoslvl3").style.top = "-15%"
-                    document.getElementById("Creditoslvl3").style.transition = "10s"
-                    document.getElementById("Proximolvl3").style.bottom = "-34%"
-                    document.getElementById("Proximolvl3").style.transition = "15s"
-                }
-
-                setTimeout(CreditosFinal, 5000)
-
+                // Las naves tardan ~6s en llegar...
                 setTimeout(function () {
-                    document.getElementById("BotonVolverInicio").style.display = "block"
-
-                    Swal.fire({
-                        title: 'Felicitaciones por parte del <br> Grupo Omega<br><br><img src="IMG/Logo_Omega.png" width="120px">',
-                        html: '<b class="Aumentar puntos">Sabia que lo lograrías, derrotaste al agujero negro y nos salvaste de la destrucción definitiva. Esperamos volverte a ver jugando IRON FIST 2 en un futuro <br><br> CONTACTOS:<br><br> 71727432@certus.edu.pe <br><br> 71663265@certus.edu.pe <br><br> 70845813@certus.edu.pe <br></b>',
-                        icon: 'success',
-                        confirmButtonText: '<span id="Pausear_musica">De acuerdo</span>',
-                        width: '50%',
-                        timer: 100000,
-                        timerProgressBar: true,
-                        allowOutsideClick: true,
-                        allowEscapeKey: false,
-                        allowEnterKey: false,
-                        stopKeydownPropagation: false
-                    })
-                }, 20000)
+                    IniciarCreditos()
+                }, 7000)
 
             }, 3000)
         }

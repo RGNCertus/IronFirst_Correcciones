@@ -1,0 +1,303 @@
+/* =====================================================================
+   EXTRAS.CSS  -  Aviso inicial, Puntuacion final y Creditos
+   Agregalo en el <head> DESPUES de Estilos.css
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   5. AVISO INICIAL (con cintas de precaucion en movimiento)
+   --------------------------------------------------------------------- */
+#PantallaAviso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(20, 20, 50, 0.97), rgba(5, 5, 15, 0.99));
+    z-index: 2147483000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity 0.8s ease;
+}
+
+#PantallaAviso.oculto-aviso {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Cinta de precaucion: franjas amarillas y negras */
+.cinta-precaucion {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #FFD400;
+    background-image: linear-gradient(45deg, #111 25%, transparent 25%, transparent 50%, #111 50%, #111 75%, transparent 75%, transparent);
+    background-size: 80px 80px;
+    border-top: 4px solid #111;
+    border-bottom: 4px solid #111;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* La de arriba se mueve hacia la izquierda, la de abajo hacia la derecha */
+.cinta-superior {
+    top: 30px;
+    animation: cinta-izquierda 3s linear infinite;
+}
+
+.cinta-inferior {
+    bottom: 30px;
+    animation: cinta-derecha 3s linear infinite;
+}
+
+@keyframes cinta-izquierda {
+    from { background-position: 0 0; }
+    to   { background-position: -80px 0; }
+}
+
+@keyframes cinta-derecha {
+    from { background-position: 0 0; }
+    to   { background-position: 80px 0; }
+}
+
+.aviso-contenido {
+    width: 86%;
+    max-width: 780px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+    background: rgba(15, 15, 35, 0.92);
+    border: 2px solid rgba(255, 71, 87, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 71, 87, 0.35), inset 0 0 10px rgba(255, 71, 87, 0.2);
+    z-index: 2;
+}
+
+.aviso-contenido h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #FFD400;
+    margin: 0 0 22px 0;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.aviso-contenido p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    margin: 0 0 14px 0;
+}
+
+#BotonContinuarAviso {
+    margin-top: 18px;
+}
+
+
+/* ---------------------------------------------------------------------
+   4. PUNTUACION FINAL (rangos C, B, A, S)
+   --------------------------------------------------------------------- */
+#PantallaPuntuacion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 28, 0.96);
+    z-index: 2000000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+#PantallaPuntuacion.visible {
+    opacity: 1;
+}
+
+.puntuacion-titulo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    text-shadow: 3px 3px 0 #000, 0 0 14px rgba(255, 71, 87, 0.8);
+}
+
+.puntuacion-cuerpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.puntuacion-rango-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+}
+
+.puntuacion-rango {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 150px;
+    line-height: 1;
+    color: #9aa5b1;
+    text-shadow: 0 0 20px #9aa5b1;
+}
+
+/* Efecto "pop" cada vez que cambia la letra */
+.rango-pop {
+    animation: rango-pop 0.45s ease-out;
+}
+
+@keyframes rango-pop {
+    0%   { transform: scale(0.4); opacity: 0.3; }
+    60%  { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.puntuacion-mensaje {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    min-height: 20px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.puntuacion-datos p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 17px;
+    color: #ffd23f;
+    margin: 14px 0;
+}
+
+.puntuacion-datos span {
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------------------
+   3. CREDITOS FINALES
+   --------------------------------------------------------------------- */
+#PantallaCreditos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #0b0b2b 0%, #000000 100%);
+    z-index: 2000000000;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+#PantallaCreditos.visible {
+    opacity: 1;
+}
+
+/* El rodillo arranca justo debajo de la caja y sube hasta salir por arriba */
+#CreditosRodillo {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    will-change: transform;
+}
+
+.creditos-logo {
+    height: 130px;
+    width: auto;
+    filter: drop-shadow(0 0 14px rgba(255, 71, 87, 0.7));
+}
+
+.creditos-equipo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 34px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 3px 3px 0 #000, 0 0 16px rgba(255, 71, 87, 0.8);
+}
+
+.creditos-linea {
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff4757, transparent);
+}
+
+.creditos-subtitulo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #ffd23f;
+    margin: 6px 0;
+}
+
+.creditos-nombre {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+    padding: 10px 28px;
+    border: 2px solid rgba(255, 71, 87, 0.6);
+    border-radius: 10px;
+    background: rgba(255, 71, 87, 0.12);
+    box-shadow: 0 0 14px rgba(255, 71, 87, 0.35);
+}
+
+.creditos-base {
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #cfd6ff;
+    margin: 0 0 30px 0;
+}
+
+/* Bloque final: queda fijo en el centro cuando termina el desplazamiento */
+#CreditosFinalBloque {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+#CreditosFinalBloque.visible {
+    opacity: 1;
+}
+
+.creditos-gracias {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 3px 3px 0 #000, 0 0 16px rgba(255, 71, 87, 0.8);
+}
+
+.creditos-proximamente {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #ffd23f;
+    margin: 0;
+}

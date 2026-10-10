@@ -1,4 +1,4 @@
-TiempoFinal = 45 //VARIABLE DE INICIO TIEMPO (nivel final, mas corto e intenso)
+TiempoFinal = 45 //VARIABLE DE INICIO TIEMPO
 PuntajeFinal = 0 //VARIABLE DE INICIO PUNTOS
 NivelFinalGanado = false
 
@@ -106,10 +106,8 @@ function JUEGOFinal() {
                 document.getElementById("Pantalla_Ovnis2lvl3").style.transition = "6s"
                 document.getElementById("Pantalla_Ovnis2lvl3").style.left = "7%"
 
-                // La música de victoria arranca apenas reaparecen las naves
                 document.getElementById("Musica_Final").play()
 
-                // Las naves tardan ~6s en llegar...
                 setTimeout(function () {
                     IniciarCreditos()
                 }, 7000)

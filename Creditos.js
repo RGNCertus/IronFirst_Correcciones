@@ -1,10 +1,3 @@
-// =====================================================================
-//  CREDITOS FINALES
-//  Cargalo en el index.html ANTES de JavaScript.js
-// =====================================================================
-
-
-// ---------- CONFIGURACION: aqui editas los nombres y textos ----------
 var CREDITOS_CONFIG = {
     equipo: "3x3 Studios",
     logo: "IMG/equipo_logo.png",
@@ -14,7 +7,7 @@ var CREDITOS_CONFIG = {
         "Mirian Guadalupe ",
         "Victor Lopez",
         "Angelo Daza"
-        // ,"Participante 5"   <-- para agregar un 5to participante, borra las // y cambia el nombre
+        // ,"Participante 5"  
     ],
 
     textoBase: "Basado en el proyecto <b>IRON FIST</b><br>del grupo Omega",
@@ -60,7 +53,6 @@ function IniciarCreditos() {
     void pantalla.offsetWidth
     pantalla.classList.add("visible")
 
-    // La musica epica de los creditos arranca aqui
     var musica = document.getElementById("Musica_Final")
     if (musica) {
         musica.play().catch(function (error) {
@@ -68,7 +60,6 @@ function IniciarCreditos() {
         })
     }
 
-    // Cuando termina el fundido a negro, empieza a subir el texto
     setTimeout(function () {
 
         var rodillo = document.getElementById("CreditosRodillo")
@@ -89,7 +80,6 @@ function IniciarCreditos() {
             var bloqueFinal = document.getElementById("CreditosFinalBloque")
             bloqueFinal.classList.add("visible")
 
-            // El mensaje final se queda 3.5s, se desvanece y recien ahi aparecen los resultados dentro de los creditos
             setTimeout(function () {
                 bloqueFinal.classList.remove("visible")
 

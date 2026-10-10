@@ -186,7 +186,7 @@ function JUEGOlvl3() {
         var rastro = document.createElement("div")
         rastro.className = "rastro-cometa"
         rastro.style.left = meteoro.offsetLeft + "px"
-        rastro.style.top = (meteoro.offsetTop + 20) + "px" //lo centra un poco mejor respecto a la imagen
+        rastro.style.top = (meteoro.offsetTop + 20) + "px"
         meteoro.parentElement.appendChild(rastro)
         setTimeout(function(){ rastro.remove() }, 500)
     }
